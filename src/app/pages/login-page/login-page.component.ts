@@ -1,0 +1,46 @@
+import { Component, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { take } from 'rxjs';
+import { AuthUser } from '../../types/authUser';
+
+@Component({
+  selector: 'app-login-page',
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    MatSlideToggleModule,
+    ReactiveFormsModule 
+  ],
+  templateUrl: './login-page.component.html',
+  styleUrl: './login-page.component.scss'
+})
+export class LoginPageComponent {
+  private authService = inject(AuthService);
+  private fb = inject(FormBuilder);
+  isLoading = false;
+
+  form = this.fb.group({ 
+    email: ['', Validators.compose([Validators.required, Validators.email])], 
+    password: ['', Validators.required],
+    rememberMe: [false]
+  });
+  
+  onSubmit() {
+    if (this.form.valid) {
+      this.isLoading = true;
+      this.authService.login(this.form.value as AuthUser).pipe(take(1)).
+      subscribe({ 
+        next: (response) => {
+          console.log('Токен:', response.accessToken);
+        },
+        error: (error) => {
+          console.error('Ошибка авторизации:', error),
+          this.isLoading = false;
+        }
+      });
+    }
+  }
+}

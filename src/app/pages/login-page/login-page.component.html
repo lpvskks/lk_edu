@@ -1,0 +1,21 @@
+<form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h1>Вход в аккаунт</h1>
+
+  <label for="email" class="sign-in-label">
+    Электронная почта
+    <input formControlName="email" type="email" id="email" required />
+  </label>
+
+  <label for="password" class="sign-in-label">
+    Пароль
+    <input formControlName="password" type="password" id="password" required />
+  </label>
+
+  <mat-slide-toggle formControlName="rememberMe" class="custom-toggle">
+    Запомнить меня
+  </mat-slide-toggle>
+
+  <button class="btn" type="submit" [disabled]="isLoading">Войти</button>
+
+  <router-outlet></router-outlet>
+</form>
