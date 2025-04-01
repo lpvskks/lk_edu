@@ -5,6 +5,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { take } from 'rxjs';
 import { AuthUser } from '../../types/authUser';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-login-page',
@@ -12,6 +13,7 @@ import { AuthUser } from '../../types/authUser';
   imports: [
     RouterOutlet,
     MatSlideToggleModule,
+    MatInputModule,
     ReactiveFormsModule 
   ],
   templateUrl: './login-page.component.html',

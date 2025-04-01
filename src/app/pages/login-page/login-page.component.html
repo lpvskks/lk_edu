@@ -1,21 +1,42 @@
-<form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
-  <h1>Вход в аккаунт</h1>
+<div class="container">
+  <div class="image-container">
+    <img src="/assets/Illustration.svg" alt="" />
+  </div>
+  <div class="form">
+    <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h1>Вход в аккаунт</h1>
 
-  <label for="email" class="sign-in-label">
-    Электронная почта
-    <input formControlName="email" type="email" id="email" required />
-  </label>
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="wide-field"
+      >
+        <mat-label>Электронная почта</mat-label>
+        <input matInput formControlName="email" type="email" />
+      </mat-form-field>
 
-  <label for="password" class="sign-in-label">
-    Пароль
-    <input formControlName="password" type="password" id="password" required />
-  </label>
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="wide-field"
+      >
+        <mat-label>Пароль</mat-label>
+        <input matInput formControlName="password" type="password" />
+      </mat-form-field>
 
-  <mat-slide-toggle formControlName="rememberMe" class="custom-toggle">
-    Запомнить меня
-  </mat-slide-toggle>
-
-  <button class="btn" type="submit" [disabled]="isLoading">Войти</button>
-
-  <router-outlet></router-outlet>
-</form>
+      <label class="custom-switch">
+        <input type="checkbox" formControlName="rememberMe" />
+        <span class="slider"></span>
+        <span class="label">Запомнить меня</span>
+      </label>
+      <button
+        type="submit"
+        [disabled]="isLoading"
+        class="login-btn"
+      >
+        ВОЙТИ</button
+      >
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>
