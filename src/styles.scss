@@ -1,11 +1,9 @@
 @use 'styles/fonts' as *;
 @use 'styles/colors' as *;
 
-body {
+html, body {
   background: $background-color ;
   height: 100%;
-  
   margin: 0;
   padding: 0;
 }
-

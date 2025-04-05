@@ -1,19 +1,24 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-language-switcher',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    MatIconModule
+  ],
   templateUrl: './language-switcher.component.html',
   styleUrls: ['./language-switcher.component.scss']
 })
 export class LanguageSwitcherComponent {
   languages = [
-    { code: 'ru', label: 'Русский', flag: 'assets/flags/ru.svg' },
-    { code: 'en', label: 'English', flag: 'assets/flags/gb.svg' },
+    { code: 'en', label: 'English', flag: 'gb' },
+    { code: 'ru', label: 'Русский', flag: 'ru' }
   ];
+  
 
   selectedLang = this.languages[0];
   dropdownOpen = false;

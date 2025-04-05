@@ -1,12 +1,15 @@
 <div class="lang-switcher" (click)="toggleDropdown()">
-  <img [src]="selectedLang.flag" class="flag" alt="{{ selectedLang.label }}" />
-  <span>{{ selectedLang.label }}</span>
-  <span class="arrow">▼</span>
+  <span class="lang">{{ selectedLang.label }}</span>
+  <span class="fi" [class]="'fi-' + selectedLang.flag"></span>
+  <mat-icon class="custom-arrow">expand_more</mat-icon>
 
   <ul *ngIf="dropdownOpen" class="dropdown">
-    <li *ngFor="let lang of languages" (click)="selectLanguage(lang.code)">
-      <img [src]="lang.flag" class="flag" alt="{{ lang.label }}" />
-      {{ lang.label }}
-    </li>
+    <ng-container *ngFor="let lang of languages; let i = index">
+      <li (click)="selectLanguage(lang.code)">
+        <span class="lang">{{ lang.label }}</span>
+        <span class="flag fi" [class]="'fi-' + lang.flag"></span>
+      </li>
+      <li *ngIf="i < languages.length - 1" class="divider"></li>
+    </ng-container>
   </ul>
 </div>
