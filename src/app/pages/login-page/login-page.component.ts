@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+import { Router, RouterOutlet } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { take } from 'rxjs';
-import { AuthUser } from '../../types/authUser';
+import { AuthUser } from '../../shared/types/authUser';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 export class LoginPageComponent {
   private authService = inject(AuthService);
   private fb = inject(FormBuilder);
+  router = inject(Router);
   isLoading = false;
 
   form = this.fb.group({ 
@@ -37,6 +38,7 @@ export class LoginPageComponent {
       subscribe({ 
         next: (response) => {
           console.log('Токен:', response.accessToken);
+          this.router.navigate(['']);
         },
         error: (error) => {
           console.error('Ошибка авторизации:', error),
