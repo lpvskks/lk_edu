@@ -1,17 +1,17 @@
 <div class="container">
   <div class="image-container">
-    <img src="/assets/Illustration.svg" alt="" />
+    <img src="/images/Illustration.svg" alt="" />
   </div>
   <div class="form">
     <form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
-      <h1>Вход в аккаунт</h1>
+      <h1>{{'LOGIN_TITLE' | translate}}</h1>
 
       <mat-form-field
         appearance="outline"
         floatLabel="always"
         class="wide-field"
       >
-        <mat-label>Электронная почта</mat-label>
+        <mat-label>{{'EMAIL' | translate}}</mat-label>
         <input matInput formControlName="email" type="email" />
       </mat-form-field>
 
@@ -20,21 +20,21 @@
         floatLabel="always"
         class="wide-field"
       >
-        <mat-label>Пароль</mat-label>
+        <mat-label>{{'PASSWORD' | translate }}</mat-label>
         <input matInput formControlName="password" type="password" />
       </mat-form-field>
 
       <label class="custom-switch">
         <input type="checkbox" formControlName="rememberMe" />
         <span class="slider"></span>
-        <span class="label">Запомнить меня</span>
+        <span class="label">{{ 'REMEMBER_ME' | translate }}</span>
       </label>
       <button
         type="submit"
         [disabled]="isLoading"
         class="login-btn"
       >
-        ВОЙТИ</button
+      {{ 'LOGIN_BUTTON' | translate }}</button
       >
     </form>
   </div>

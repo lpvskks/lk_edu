@@ -1,0 +1,51 @@
+.lang-switcher {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  .flag {
+    width: 24px;
+    height: 16px;
+  }
+
+  .arrow {
+    margin-left: 4px;
+    font-size: 12px;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 6px;
+    z-index: 10;
+    width: 150px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
+    li {
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background: #eee;
+      }
+
+      .flag {
+        width: 20px;
+        height: 14px;
+      }
+    }
+  }
+}

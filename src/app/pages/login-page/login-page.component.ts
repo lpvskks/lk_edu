@@ -6,6 +6,7 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { take } from 'rxjs';
 import { AuthUser } from '../../shared/types/authUser';
 import { MatInputModule } from '@angular/material/input';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login-page',
@@ -14,7 +15,8 @@ import { MatInputModule } from '@angular/material/input';
     RouterOutlet,
     MatSlideToggleModule,
     MatInputModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    TranslateModule
   ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss'
@@ -22,8 +24,14 @@ import { MatInputModule } from '@angular/material/input';
 export class LoginPageComponent {
   private authService = inject(AuthService);
   private fb = inject(FormBuilder);
+  private translate = inject(TranslateService);
   router = inject(Router);
+
   isLoading = false;
+
+  ngOnInit() {
+    this.translate.setDefaultLang('ru');
+  }
 
   form = this.fb.group({ 
     email: ['', Validators.compose([Validators.required, Validators.email])], 
