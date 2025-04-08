@@ -45,8 +45,13 @@ export class LoginPageComponent {
       this.authService.login(this.form.value as AuthUser).pipe(take(1)).
       subscribe({ 
         next: (response) => {
-          console.log('Токен:', response.accessToken);
-          this.router.navigate(['']);
+          if (response.loginSucceeded) {
+            console.log('Токен:', response.accessToken);
+            this.router.navigate(['']);
+          } else {
+            this.isLoading = false;
+            alert('Неверный логин или пароль');
+          }
         },
         error: (error) => {
           console.error('Ошибка авторизации:', error),
