@@ -8,6 +8,9 @@ h1 {
   color: $h1-color;
   font-size: 40px;
   font-weight: 500;
+  @media (max-width: 768px) {
+    font-size: 26px;
+  }
 }
 h2 {
   font-size: 32px;

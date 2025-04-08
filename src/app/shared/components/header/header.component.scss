@@ -6,4 +6,9 @@ header {
   align-items: center;
   padding: 0 64px;
   height: 44px;
+  @media (max-width: 768px) {
+    top: 0;
+    right: 0;
+    padding: 0;
+  }
 }
