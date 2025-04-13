@@ -1,0 +1,30 @@
+<div class="profilePhoto">
+  <img src="/icons/menu/Photo.svg" />
+</div>
+<button
+  class="hide-btn"
+  type="button"
+  (click)="toggleSidebar()"
+  [attr.aria-label]="isCollapsed() ? 'Показать сайдбар' : 'Скрыть сайдбар'"
+>
+  <img
+    [src]="isCollapsed() ? '/icons/menu/Btn-show.svg' : '/icons/menu/Btn-hide.svg'"
+    alt=""
+    class="img-btn"
+  />
+</button>
+
+<div>
+  <div [class.collapsed]="isCollapsed()">
+    <div
+      class="sidebar-row"
+      *ngFor="let item of sidebarItems"
+      [routerLink]="item.route"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <img [src]="item.icon" [alt]="item.alt" class="sidebar-icon" />
+      <p *ngIf="!isCollapsed()">{{ item.label }}</p>
+    </div>
+  </div>
+</div>

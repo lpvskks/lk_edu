@@ -1,0 +1,89 @@
+@use 'colors' as *;
+:host {
+  display: block;
+  background-color: $bg-sidebar;
+  height: 100vh;
+  position: relative;
+  transition: width 0.3s ease;
+  width: 280px;
+}
+
+:host-context(.collapsed) {
+  width: 118px;
+
+  .hide-btn {
+    left: 103px; 
+  }
+
+  .sidebar-icon {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .sidebar-row {
+    justify-content: center;
+  }
+  sidebar-row p {
+    opacity: 0;
+    max-width: 0;
+    margin: 0;
+  }
+}
+.sidebar-row p {
+  opacity: 1;
+  transition: opacity 0.3s ease, max-width 0.3s ease, margin 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.profilePhoto {
+  padding-top: 15px;
+  margin-bottom: 72px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.sidebar-row {
+  display: flex;
+  align-items: center;
+  transition:
+    background-color 0.3s ease,
+    border-left 0.3s ease;
+
+  &:hover {
+    background-color: rgba($buttons-color, 0.07); 
+    filter: brightness(0) saturate(100%) invert(32%) sepia(80%) saturate(4513%) hue-rotate(225deg) brightness(108%) contrast(105%);
+  }
+}
+
+.sidebar-row.active {
+  border-left: 4px solid $buttons-color;
+  background-color: rgba($buttons-color, 0.1);
+  filter: brightness(0) saturate(100%) invert(32%) sepia(80%) saturate(4513%) hue-rotate(225deg) brightness(102%) contrast(101%);
+}
+
+.sidebar-icon {
+  padding-left: 32px;
+  padding-block: 4px;
+  padding-right: 8px;
+}
+
+p {
+  margin: 0;
+}
+
+.hide-btn {
+  border: none;
+  all: unset;
+  position: absolute;
+  top: 34px;
+  left: 267px;
+  right: 0;
+  z-index: 1;
+  color: white;
+}
+.img-btn {
+  padding: 0;
+  transition: transform 3s ease;
+}
