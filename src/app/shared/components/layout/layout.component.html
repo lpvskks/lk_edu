@@ -1,4 +1,8 @@
-<div [class.collapsed]="isSidebarCollapsed()">
-  <app-sidebar (sidebarToggle)="onSidebarToggle($event)"></app-sidebar>
-  <router-outlet></router-outlet>
+
+<app-sidebar (sidebarToggle)="onSidebarToggle($event)"></app-sidebar>
+<div class="right-container">
+  <app-header></app-header>
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
 </div>
