@@ -7,6 +7,7 @@ import { take } from 'rxjs';
 import { AuthUser } from '../../shared/types/authUser';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { HeaderComponent } from "../../shared/components/header/header.component";
 
 @Component({
   selector: 'app-login-page',
@@ -16,8 +17,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
     MatSlideToggleModule,
     MatInputModule,
     ReactiveFormsModule,
-    TranslateModule
-  ],
+    TranslateModule,
+    HeaderComponent
+],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss'
 })

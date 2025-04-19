@@ -1,42 +1,48 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output, signal } from '@angular/core';
+import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [CommonModule, RouterModule],
+  imports: [
+    CommonModule, 
+    RouterModule, 
+    TranslateModule  
+  ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
+  private translate = inject(TranslateService);
   isCollapsed = signal(false);
 
   sidebarItems = [
     {
       icon: '/icons/menu/User.svg',
       alt: 'user',
-      label: 'Профиль',
+      label: 'SIDEBAR.PROFILE',
       route: '/profile'
     },
     {
       icon: '/icons/menu/Administrator.svg',
       alt: 'admin',
-      label: 'Администрирование',
+      label: 'SIDEBAR.ADMINISTRATION',
     },
     {
       icon: '/icons/menu/Reference.svg',
       alt: 'reference',
-      label: 'Справки',
+      label: 'SIDEBAR.REFERENCES',
     },
     {
       icon: '/icons/menu/Link.svg',
       alt: 'links',
-      label: 'Полезные сервисы',
+      label: 'SIDEBAR.USEFUL_SERVICES',
     },
     {
       icon: '/icons/menu/Map.svg',
       alt: 'events',
-      label: 'Мероприятия',
+      label: 'SIDEBAR.EVENTS',
     },
   ];
 

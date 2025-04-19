@@ -1,7 +1,18 @@
 {
-  "LOGIN_TITLE": "Sign in",
-  "EMAIL": "Email",
-  "PASSWORD": "Password",
-  "REMEMBER_ME": "Remember me",
-  "LOGIN_BUTTON": "SIGN IN"
+  "LOGIN": {
+    "TITLE": "Sign in",
+    "EMAIL": "Email",
+    "PASSWORD": "Password",
+    "REMEMBER_ME": "Remember me",
+    "BUTTON": "SIGN IN"
+  },
+  "SIDEBAR": {
+    "PROFILE": "Profile",
+    "ADMINISTRATION": "Administration",
+    "REFERENCES": "References",
+    "USEFUL_SERVICES": "Useful Services",
+    "EVENTS": "Events",
+    "SHOW": "Show sidebar",
+    "HIDE": "Hide sidebar"
+  }
 }

@@ -1,7 +1,18 @@
 {
-  "LOGIN_TITLE": "Вход в аккаунт",
+  "LOGIN": {
+  "TITLE": "Вход в аккаунт",
   "EMAIL": "Электронная почта",
   "PASSWORD": "Пароль",
   "REMEMBER_ME": "Запомнить меня",
   "LOGIN_BUTTON": "ВОЙТИ"
+  },
+  "SIDEBAR": {
+    "PROFILE": "Профиль",
+    "ADMINISTRATION": "Администрирование",
+    "REFERENCES": "Справки",
+    "USEFUL_SERVICES": "Полезные сервисы",
+    "EVENTS": "Мероприятия",
+    "SHOW_SIDEBAR": "Показать сайдбар",
+    "HIDE_SIDEBAR": "Скрыть сайдбар"
+  }
 }
