@@ -1,7 +1,16 @@
+<app-sidebar
+[isMobile]="isMobile"
 
-<app-sidebar (sidebarToggle)="onSidebarToggle($event)"></app-sidebar>
+[mobileVisible]="mobileSidebarVisible" 
+  (sidebarToggle)="onSidebarToggle($event)"
+  [ngClass]="{ 'mobile-visible': mobileSidebarVisible }"
+  (mobileSidebarClose)="onMobileSidebarClose()"
+></app-sidebar>
+
 <div class="right-container">
-  <app-header></app-header>
+  <app-header
+    (mobileSidebarToggle)="onMobileSidebarToggle()"
+  ></app-header>
   <main class="content">
     <router-outlet></router-outlet>
   </main>

@@ -1,28 +1,30 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, inject, Output, signal } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Input,
+  Output,
+  signal,
+} from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [
-    CommonModule, 
-    RouterModule, 
-    TranslateModule  
-  ],
+  imports: [CommonModule, RouterModule, TranslateModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  private translate = inject(TranslateService);
-  isCollapsed = signal(false);
+  isCollapsed = signal(true);
 
   sidebarItems = [
     {
       icon: '/icons/menu/User.svg',
       alt: 'user',
       label: 'SIDEBAR.PROFILE',
-      route: '/profile'
+      route: '/profile',
     },
     {
       icon: '/icons/menu/Administrator.svg',
@@ -47,9 +49,20 @@ export class SidebarComponent {
   ];
 
   @Output() sidebarToggle = new EventEmitter<boolean>();
+  @Input() isMobile = false;
+  @Input() mobileVisible = false;
+  @Output() mobileSidebarClose = new EventEmitter<void>();
+
+  get isFullyCollapsed(): boolean {
+    return !this.mobileVisible && this.isCollapsed();
+  }
   toggleSidebar() {
-    const next = !this.isCollapsed();
-    this.isCollapsed.set(next);
-    this.sidebarToggle.emit(next);
+    if (this.isMobile) {
+      this.mobileSidebarClose.emit();
+    } else {
+      const next = !this.isCollapsed();
+      this.isCollapsed.set(next);
+      this.sidebarToggle.emit(next);
+    }
   }
 }
