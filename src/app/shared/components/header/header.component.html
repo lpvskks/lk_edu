@@ -1,10 +1,17 @@
 <header>
-  <button
-    class="sidebar-toggle-btn"
-    (click)="onToggleClick()"
-    aria-label="Открыть меню"
-  >
-    <img src="/icons/menu/Hamburger.svg" alt="Открыть меню" />
-  </button>
+  <ng-container *ngIf="!isLoginPage; else placeholder">
+    <button
+      class="sidebar-toggle-btn"
+      (click)="onToggleClick()"
+      aria-label="Открыть меню"
+    >
+      <img src="/icons/menu/Hamburger.svg" alt="Открыть меню" />
+    </button>
+  </ng-container>
+
+  <!-- Плейсхолдер, чтобы flex не сдвигался -->
+  <ng-template #placeholder>
+    <div class="sidebar-toggle-placeholder"></div>
+  </ng-template>
   <app-language-switcher></app-language-switcher>
 </header>
