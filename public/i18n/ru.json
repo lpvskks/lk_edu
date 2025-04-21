@@ -4,7 +4,7 @@
   "EMAIL": "Электронная почта",
   "PASSWORD": "Пароль",
   "REMEMBER_ME": "Запомнить меня",
-  "LOGIN_BUTTON": "ВОЙТИ"
+  "BUTTON": "ВОЙТИ"
   },
   "SIDEBAR": {
     "PROFILE": "Профиль",
