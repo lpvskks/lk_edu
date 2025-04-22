@@ -24,7 +24,7 @@
       [routerLinkActiveOptions]="{ exact: true }"
     >
       <img [src]="item.icon" [alt]="item.alt" class="sidebar-icon" />
-      <p *ngIf="!isCollapsed()">{{ item.label | translate }}</p>
+      <p *ngIf="!isFullyCollapsed">{{ item.label | translate }}</p>
     </div>
   </div>
 </div>
