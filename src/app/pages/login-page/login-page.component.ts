@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { AuthService } from '../../core/services/auth.service';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { take } from 'rxjs';
@@ -8,6 +7,7 @@ import { AuthUser } from '../../shared/types/authUser';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from "../../shared/components/header/header.component";
+import { AuthService } from '../../core/services/auth/auth.service';
 
 @Component({
   selector: 'app-login-page',
