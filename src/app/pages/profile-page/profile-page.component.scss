@@ -52,7 +52,7 @@
 
  .more-info {
     width: 1007px;
-    height: 560px;
+    height: auto;
     background-color: #F9F9F9;
     border-radius: 8px;
   }
@@ -105,10 +105,10 @@
     align-items: center;
     margin-bottom: 12px;
 
-    .column-title {
-      font-family: 'Roboto', sans-serif;
+    h4 {
       font-weight: 600;
       font-size: 16px;
+      color: #3A3A3A;
     }
   }
 
@@ -137,12 +137,12 @@
 
       .info-label {
         font-size: 12px;
-        color: #757575;
+        color: #666666;
         margin: 0 0 4px;
       }
       .info-value {
         font-size: 16px;
-        color: #212121;
+        color: #3A3A3A;
         margin: 0;
       }
     }

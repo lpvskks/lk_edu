@@ -6,6 +6,7 @@ import { LayoutComponent } from '../../shared/components/layout/layout.component
 import { SafeUrl } from '@angular/platform-browser';
 import { map, Observable, shareReplay } from 'rxjs';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { ExperienceEntry, ExperienceType, WorkRecord } from '../../shared/types/profile/work-info';
 
 @Component({
   selector: 'app-profile-page',
@@ -24,7 +25,8 @@ export class ProfilePageComponent {
     this.selectedSection = section;
   }
 
-  readonly educationRecord$ = this.profileService.getStudentEducation();
+  readonly educationRecord$ = this.profileService.getUserEducation();
+  readonly workRecord$ = this.profileService.getUserWork();
 
   readonly profile$: Observable<Profile> = this.profileService.getProfile();
 
@@ -50,6 +52,10 @@ export class ProfilePageComponent {
       map((p) => p.contacts.find((c) => c.type === 'Email')?.value)
     );
 
+     getExperience(entry: WorkRecord, type: ExperienceType): ExperienceEntry | undefined {
+    return entry.experience.find(e => e.type === type);
+  }
+  
   constructor() {
     this.layout.setPageTitle('PAGE_TITLES.PROFILE');
   }
