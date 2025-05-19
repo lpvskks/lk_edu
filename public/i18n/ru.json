@@ -14,5 +14,21 @@
     "EVENTS": "Мероприятия",
     "SHOW_SIDEBAR": "Показать сайдбар",
     "HIDE_SIDEBAR": "Скрыть сайдбар"
+  },
+  "PAGE_TITLES": {
+    "PROFILE": "Профиль"
+  },
+  "PROFILE": {
+    "PERSONAL_DATA": "Личные данные",
+    "GENDER": "Пол",
+    "BIRTH_DATE": "Дата рождения",
+    "CITIZENSHIP": "Гражданство",
+    "SNILS": "СНИЛС",
+    "EMAIL": "Email",
+    "CONTACTS": "Контакты",
+    "PHONE": "Телефон",
+    "PHONE_2": "Телефон 2",
+    "ADDITIONAL_EMAIL": "Дополнительный E-mail",
+    "ADDRESS": "Адрес"
   }
 }

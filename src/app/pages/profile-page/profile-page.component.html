@@ -1,0 +1,86 @@
+<div class="profile-container">
+  <div class="column column-left">
+    <img
+      *ngIf="avatarUrl$ | async as avatarUrl"
+      [src]="avatarUrl"
+      alt="фото профиля"
+      class="profile-photo"
+    />
+
+    <div class="personal-data">
+      <h3 class="info-section__title">
+        {{ "PROFILE.PERSONAL_DATA" | translate }}
+      </h3>
+
+      <ng-container *ngIf="profile$ | async as profile">
+        <div class="info-block">
+          <p class="info-label">{{ "PROFILE.GENDER" | translate }}</p>
+          <p class="info-value">
+            {{ profile.gender === "Female" ? "Женский" : profile.gender }}
+          </p>
+        </div>
+
+        <div class="info-block">
+          <span class="info-label">{{ "PROFILE.BIRTH_DATE" | translate }}</span>
+          <p class="info-value">
+            {{ profile?.birthDate | date : "dd.MM.yyyy" }}
+          </p>
+        </div>
+
+        <div class="info-block">
+          <span class="info-label">{{
+            "PROFILE.CITIZENSHIP" | translate
+          }}</span>
+          <p class="info-value">{{ profile?.citizenship?.name }}</p>
+        </div>
+
+        <div class="info-block">
+          <span class="info-label">{{ "PROFILE.SNILS" | translate }}</span>
+        </div>
+
+        <div class="info-block info-block--last">
+          <span class="info-label">{{ "PROFILE.EMAIL" | translate }}</span>
+          <p class="info-value">{{ profile?.email }}</p>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="contacts">
+      <h3 class="info-section__title">{{ "PROFILE.CONTACTS" | translate }}</h3>
+
+      <div class="info-block">
+        <span class="info-label">{{ "PROFILE.PHONE" | translate }}</span>
+        <p class="info-value">{{ primaryPhone$ | async }}</p>
+      </div>
+
+      <div class="info-block">
+        <span class="info-label">{{ "PROFILE.PHONE_2" | translate }}</span>
+        <p class="info-value">{{ secondaryPhone$ | async }}</p>
+      </div>
+
+      <div class="info-block">
+        <span class="info-label">{{
+          "PROFILE.ADDITIONAL_EMAIL" | translate
+        }}</span>
+        <p class="info-value">{{ additionalEmail$ | async }}</p>
+      </div>
+
+      <div class="info-block info-block--last">
+        <span class="info-label">{{ "PROFILE.ADDRESS" | translate }}</span>
+        <p class="info-value">{{ (profile$ | async)?.address }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column column-right">
+    <ng-container *ngIf="profile$ | async as profile">
+      <div class="name">
+        <h2>
+          {{ profile.lastName }} {{ profile.firstName }}
+          {{ profile.patronymic }}
+        </h2>
+      </div>
+    </ng-container>
+    <div class="more-info"></div>
+  </div>
+</div>

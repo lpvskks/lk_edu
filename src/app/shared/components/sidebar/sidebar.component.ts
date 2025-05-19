@@ -8,7 +8,8 @@ import {
   signal,
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateModule} from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import { ProfileService } from '../../../core/services/profile/profile.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -17,6 +18,8 @@ import { TranslateModule} from '@ngx-translate/core';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
+  private profileService = inject(ProfileService);
+  readonly avatarUrl$ = this.profileService.avatarUrl$;
   isCollapsed = signal(true);
 
   sidebarItems = [

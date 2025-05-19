@@ -14,5 +14,23 @@
     "EVENTS": "Events",
     "SHOW": "Show sidebar",
     "HIDE": "Hide sidebar"
+  },
+
+  "PAGE_TITLES": {
+    "PROFILE": "Profile"
+  },
+
+  "PROFILE": {
+       "PERSONAL_DATA": "Personal Data",
+    "GENDER": "Gender",
+    "BIRTH_DATE": "Birth Date",
+    "CITIZENSHIP": "Citizenship",
+    "SNILS": "SNILS",
+    "EMAIL": "Email",
+    "CONTACTS": "Contacts",
+    "PHONE": "Phone",
+    "PHONE_2": "Phone 2",
+    "ADDITIONAL_EMAIL": "Additional Email",
+    "ADDRESS": "Address"
   }
 }
