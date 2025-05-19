@@ -30,5 +30,31 @@
     "PHONE_2": "Телефон 2",
     "ADDITIONAL_EMAIL": "Дополнительный E-mail",
     "ADDRESS": "Адрес"
+  },
+  "PROFILE-INFO": {
+     "EDUCATION_TAB": "Образование",
+    "WORK_TAB": "Работа",
+    "EDU_LEVEL": "Уровень образования",
+    "EDU_STATUS": "Статус обучения",
+    "YEARS_OF_STUDY": "Года обучения",
+    "CREDIT_BOOK": "Номер зачётной книжки",
+    "EDU_FORM": "Форма обучения",
+    "EDU_BASE": "Основа обучения",
+    "FACULTY": "Факультет",
+    "GROUP": "Группа",
+    "DIRECTION": "Направление",
+    "PROFILE": "Профиль",
+    "COURSE": "Курс",
+
+    "WORK_EXPERIENCE_HEADER": "Стаж",
+    "TOTAL_EXPERIENCE": "Общий стаж",
+    "PEDAGOGICAL_EXPERIENCE": "Педагогический стаж",
+    "CURRENT_PLACE_EXPERIENCE": "Стаж на текущем месте",
+    "EMPLOYMENT_TYPE": "Вид занятости",
+    "RATE": "Ставка",
+    "WORKPLACE": "Место работы",
+    "POST_TYPE": "Тип должности",
+    "DATE_START": "Дата приёма",
+    "DATE_END": "Дата увольнения"
   }
 }

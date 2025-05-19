@@ -88,14 +88,14 @@
           [class.active]="selectedSection === 'edu'"
           (click)="selectSection('edu')"
         >
-          <h3>Образование</h3>
+           <h3>{{ 'PROFILE-INFO.EDUCATION_TAB' | translate }}</h3>
         </div>
         <div
           class="section-btn work"
           [class.active]="selectedSection === 'work'"
           (click)="selectSection('work')"
         >
-          <h3>Работа</h3>
+        <h3>{{ 'PROFILE-INFO.WORK_TAB' | translate }}</h3>
         </div>
       </div>
 
@@ -115,41 +115,33 @@
               <div class="education-details">
                 <div class="info-row">
                   <div class="info-item">
-                    <p class="info-label">Года обучения</p>
+                    <p class="info-label">  {{ 'PROFILE-INFO.YEARS_OF_STUDY' | translate }}</p>
                     <p class="info-value">{{ entry.educationYears.name }}</p>
                   </div>
                   <div class="info-item">
-                    <p class="info-label">Номер зачётной книги</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.CREDIT_BOOK' | translate }}</p>
                     <p class="info-value">{{ entry.creditBooknumber }}</p>
                   </div>
                 </div>
                 <div class="info-row">
                   <div class="info-item">
-                    <p class="info-label">Форма обучения</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.EDU_FORM' | translate }}</p>
                     <p class="info-value">{{ entry.educationForm.name }}</p>
                   </div>
                   <div class="info-item">
-                    <p class="info-label">База</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.EDU_BASE' | translate }}</p>
                     <p class="info-value">{{ entry.educationBase.name }}</p>
                   </div>
                 </div>
                 <div class="info-row">
                   <div class="info-item">
-                    <p class="info-label">Факультет</p>
-                    <p class="info-value">
-                      {{ entry.educationDirection.name }}
-                    </p>
-                  </div>
-                </div>
-                <div class="info-row">
-                  <div class="info-item">
-                    <p class="info-label">Факультет</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.FACULTY' | translate }}</p>
                     <p class="info-value">{{ entry.faculty.name }}</p>
                   </div>
                 </div>
                 <div class="info-row">
                   <div class="info-item">
-                    <p class="info-label">Направление</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.DIRECTION' | translate }}</p>
                     <p class="info-value">
                       {{ entry.educationDirection.name }}
                     </p>
@@ -157,17 +149,17 @@
                 </div>
                 <div class="info-row">
                   <div class="info-item">
-                    <p class="info-label">Профиль</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.PROFILE' | translate }} </p>
                     <p class="info-value">{{ entry.educationProfile.name }}</p>
                   </div>
                 </div>
                 <div class="info-row">
                   <div class="info-item">
-                    <p class="info-label">Курс</p>
+                    <p class="info-label">{{ 'PROFILE-INFO.COURSE' | translate }}</p>
                     <p class="info-value">{{ entry.course }}</p>
                   </div>
                   <div class="info-item">
-                    <p class="info-label">Группа</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.GROUP' | translate }} </p>
                     <p class="info-value">{{ entry.group.name }}</p>
                   </div>
                 </div>
@@ -185,14 +177,14 @@
             <div class="education-details">
               <div class="info-row">
                 <div class="info-item">
-                  <p class="info-label">Общий стаж</p>
+                  <p class="info-label">{{ 'PROFILE-INFO.TOTAL_EXPERIENCE' | translate }} </p>
                   <p class="info-value">
                     {{ getExperience(work, "Common")?.years }} года
                     {{ getExperience(work, "Common")?.months }} месяца
                   </p>
                 </div>
                 <div class="info-item">
-                  <p class="info-label">Педагогический стаж</p>
+                  <p class="info-label"> {{ 'PROFILE-INFO.PEDAGOGICAL_EXPERIENCE' | translate }} </p>
                   <p class="info-value">
                     {{ getExperience(work, "Pedagogical")?.years }} года
                     {{ getExperience(work, "Pedagogical")?.months }} месяца
@@ -202,7 +194,7 @@
 
               <div class="info-row">
                 <div class="info-item">
-                  <p class="info-label">Стаж на текущем месте работы</p>
+                  <p class="info-label">{{ 'PROFILE-INFO.CURRENT_PLACE_EXPERIENCE' | translate }} </p>
                   <p class="info-value">
                     {{ getExperience(work, "OnCurrentPlace")?.years }} года
                     {{ getExperience(work, "OnCurrentPlace")?.months }} месяца
@@ -219,35 +211,35 @@
               <div class="education-details">
                 <div class="info-row">
                   <div class="info-item">
-                    <p class="info-label">Вид занятости</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.EMPLOYMENT_TYPE' | translate }} </p>
                     <p class="info-value">{{ post.employmentType }}</p>
                   </div>
                   <div class="info-item">
-                    <p class="info-label">Ставка</p>
+                    <p class="info-label">{{ 'PROFILE-INFO.RATE' | translate }} </p>
                     <p class="info-value">{{ post.rate }}</p>
                   </div>
                 </div>
                 <div class="info-row">
                   <div class="info-item full-width">
-                    <p class="info-label">Место работы</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.WORKPLACE' | translate }} </p>
                     <p class="info-value">{{ post.departments[0].name }}</p>
                   </div>
                 </div>
                 <div class="info-row">
                   <div class="info-item">
-                    <p class="info-label">Тип должности</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.POST_TYPE' | translate }} </p>
                     <p class="info-value">{{ post.postType.name }}</p>
                   </div>
                 </div>
                 <div class="info-row">
                   <div class="info-item">
-                    <p class="info-label">Дата приёма на работу</p>
+                    <p class="info-label">{{ 'PROFILE-INFO.DATE_START' | translate }} </p>
                     <p class="info-value">
                       {{ post.dateStart | date : "dd.MM.yyyy" }}
                     </p>
                   </div>
                   <div class="info-item">
-                    <p class="info-label">Дата увольнения</p>
+                    <p class="info-label"> {{ 'PROFILE-INFO.DATE_END' | translate }} </p>
                     <p class="info-value">
                       {{ post.dateEnd | date : "dd.MM.yyyy" }}
                     </p>
