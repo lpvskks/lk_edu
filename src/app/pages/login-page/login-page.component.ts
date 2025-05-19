@@ -3,7 +3,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { take } from 'rxjs';
-import { AuthUser } from '../../shared/types/authUser';
+import { AuthUser } from '../../shared/types/auth/authUser';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from "../../shared/components/header/header.component";

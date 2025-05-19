@@ -4,7 +4,8 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { API_URL } from '../../constants/constants';
-import { Profile } from '../../../shared/types/profile';
+import { Profile } from '../../../shared/types/profile/profile';
+import { EducationRecord } from '../../../shared/types/profile/education';
 
 @Injectable({
   providedIn: 'root',
@@ -25,6 +26,10 @@ export class ProfileService {
   getAvatar(id: string): Observable<Blob> {
     return this.http.get(`${API_URL}/Files/${id}`, { responseType: 'blob' });
   }
+  
+getStudentEducation(): Observable<EducationRecord> {
+  return this.http.get<EducationRecord>(`${API_URL}/Profile/student`);
+}
 
   get avatarUrl$(): Observable<SafeUrl> {
     return this.profile$.pipe(

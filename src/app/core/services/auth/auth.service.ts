@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { catchError, Observable, tap, throwError } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
-import { AuthUser, LoginResponse } from '../../../shared/types/authUser';
+import { AuthUser, LoginResponse } from '../../../shared/types/auth/authUser';
 import { API_URL } from '../../constants/constants';
 
 @Injectable({
