@@ -20,5 +20,7 @@
   <app-language-switcher></app-language-switcher>
 </header>
 <div *ngIf="!isLoginPage && isMobile" class="page-title-mobile">
-  <h1> {{ currentPageTitle | translate }}</h1>
+  <div class="page-name">
+    <h1> {{ currentPageTitle | translate }}</h1>
+  </div>
 </div>
