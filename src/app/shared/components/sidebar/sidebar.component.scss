@@ -67,6 +67,13 @@
   display: flex;
   justify-content: center;
 }
+.profile-photo {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
 
 .sidebar-row {
   display: flex;

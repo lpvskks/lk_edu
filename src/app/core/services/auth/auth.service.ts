@@ -1,17 +1,17 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { AuthUser, LoginResponse } from '../../shared/types/authUser';
-import { API_URL } from '../constants/constants';
 import { catchError, Observable, tap, throwError } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { AuthUser, LoginResponse } from '../../../shared/types/auth/authUser';
+import { API_URL } from '../../constants/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private http = inject(HttpClient);
-  private cookieService = inject(CookieService);
+  cookieService = inject(CookieService);
   router = inject(Router);
   token: string | null = null;
   refreshToken: string | null = null;
@@ -38,6 +38,7 @@ export class AuthService {
   }
 
   refreshAuthToken() {
+    this.refreshToken = this.refreshToken ?? this.cookieService.get('refreshToken');
     return this.http
       .post<LoginResponse>(`${API_URL}/Auth/refresh`, 
         {
@@ -54,7 +55,7 @@ export class AuthService {
   }
   
   logout() {
-    this.cookieService.deleteAll;
+    this.cookieService.deleteAll();
     this.token = null
     this.refreshToken = null
     this.router.navigate(['login'])

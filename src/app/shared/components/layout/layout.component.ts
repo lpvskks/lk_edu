@@ -4,6 +4,8 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
 import { HeaderComponent } from "../header/header.component";
 import { NgClass } from '@angular/common';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { ProfilePageComponent } from '../../../pages/profile-page/profile-page.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layout',
@@ -11,7 +13,8 @@ import { BreakpointObserver } from '@angular/cdk/layout';
     RouterOutlet,
     SidebarComponent,
     HeaderComponent,
-    NgClass
+    NgClass,
+    TranslateModule
 ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
@@ -23,6 +26,7 @@ export class LayoutComponent {
   isSidebarCollapsed = signal(true);
   isMobileSidebarVisible = signal(false);
   isMobileView = signal(false)
+  currentPageTitle = signal<string>('');
 
   constructor(private breakpointObserver: BreakpointObserver) {
     this.observeBreakpoints();
@@ -34,6 +38,12 @@ export class LayoutComponent {
       .subscribe(result => {
         this.isMobileView.set(result.matches);
       });
+  }
+  setPageTitle(title: string) {
+    this.currentPageTitle.set(title);
+  }
+  get pageTitle(): string {
+    return this.currentPageTitle();
   }
 
   onSidebarToggle(collapsed: boolean) {

@@ -17,10 +17,11 @@ header {
   @media (max-width: 1200px) {
     padding-top: 0;
     height: 80px;
+    padding-inline: 100px;
   }
   @media (max-width: 900px) {
     padding-top: 0;
-    padding-inline: 100px;
+    padding-inline: 50px;
     height: 80px;
   }
   @media (max-width: 600px) {
@@ -39,10 +40,27 @@ header {
   @media (max-width: 768px) {
     top: 0;
     right: 0;
-    padding: 0;
   }
 }
 .sidebar-toggle-placeholder {
-  width: 29px; 
-  height: 29px; 
+  width: 29px;
+  height: 29px;
+}
+
+@media (max-width: 1200px) {
+  .page-name {
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-name {
+    padding-left: 50px;
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 600px) {
+  .page-name {
+    padding-left: 32px;
+  }
 }

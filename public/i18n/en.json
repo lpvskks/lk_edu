@@ -14,5 +14,49 @@
     "EVENTS": "Events",
     "SHOW": "Show sidebar",
     "HIDE": "Hide sidebar"
+  },
+
+  "PAGE_TITLES": {
+    "PROFILE": "Profile"
+  },
+
+  "PROFILE": {
+       "PERSONAL_DATA": "Personal Data",
+    "GENDER": "Gender",
+    "BIRTH_DATE": "Birth Date",
+    "CITIZENSHIP": "Citizenship",
+    "SNILS": "SNILS",
+    "EMAIL": "Email",
+    "CONTACTS": "Contacts",
+    "PHONE": "Phone",
+    "PHONE_2": "Phone 2",
+    "ADDITIONAL_EMAIL": "Additional Email",
+    "ADDRESS": "Address"
+  },
+   "PROFILE-INFO": {
+    "EDUCATION_TAB": "Education",
+    "WORK_TAB": "Work",
+    "EDU_LEVEL": "Level of education",
+    "EDU_STATUS": "Student status",
+    "YEARS_OF_STUDY": "Years of study",
+    "CREDIT_BOOK": "Credit book number",
+    "EDU_FORM": "Form of education",
+    "EDU_BASE": "Education base",
+    "FACULTY": "Faculty",
+    "GROUP": "Group",
+    "DIRECTION": "Direction",
+    "PROFILE": "Profile",
+    "COURSE": "Course",
+
+    "WORK_EXPERIENCE_HEADER": "Experience",
+    "TOTAL_EXPERIENCE": "Total experience",
+    "PEDAGOGICAL_EXPERIENCE": "Pedagogical experience",
+    "CURRENT_PLACE_EXPERIENCE": "Experience at current place",
+    "EMPLOYMENT_TYPE": "Employment type",
+    "RATE": "Rate",
+    "WORKPLACE": "Workplace",
+    "POST_TYPE": "Post type",
+    "DATE_START": "Start date",
+    "DATE_END": "End date"
   }
 }

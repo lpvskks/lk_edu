@@ -1,5 +1,10 @@
 <div class="profilePhoto">
-  <img src="/icons/menu/Photo.svg" />
+  <img
+    *ngIf="avatarUrl$ | async as url"
+    [src]="url"
+    alt="фото профиля"
+    class="profile-photo"
+  />
 </div>
 <button
   class="hide-btn"
@@ -8,7 +13,9 @@
   [attr.aria-label]="isCollapsed() ? 'Показать сайдбар' : 'Скрыть сайдбар'"
 >
   <img
-    [src]="isCollapsed() ? '/icons/menu/Btn-show.svg' : '/icons/menu/Btn-hide.svg'"
+    [src]="
+      isCollapsed() ? '/icons/menu/Btn-show.svg' : '/icons/menu/Btn-hide.svg'
+    "
     alt=""
     class="img-btn"
   />

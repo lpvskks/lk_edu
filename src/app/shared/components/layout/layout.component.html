@@ -9,6 +9,8 @@
 
 <div class="right-container">
   <app-header
+  [isMobile]="isMobile"
+  [currentPageTitle]="pageTitle"
     (mobileSidebarToggle)="onMobileSidebarToggle()"
   ></app-header>
   <main class="content">
