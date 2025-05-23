@@ -16,7 +16,8 @@
     "HIDE_SIDEBAR": "Скрыть сайдбар"
   },
   "PAGE_TITLES": {
-    "PROFILE": "Профиль"
+    "PROFILE": "Профиль",
+    "USEFUL_SERVICES":"Полезные сервисы"
   },
   "PROFILE": {
     "PERSONAL_DATA": "Личные данные",

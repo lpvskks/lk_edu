@@ -1,0 +1,20 @@
+<div class="pagination">
+  <button class="btn arrow" (click)="prev()" [disabled]="currentPage === 1">
+    <span class="arrow-icon">‹</span>
+  </button>
+
+  <div class="pages">
+    <span
+      *ngFor="let p of pages"
+      class="page"
+      [class.active]="p === currentPage"
+      (click)="onClick(p)"
+    >
+      {{ p }}
+    </span>
+  </div>
+
+  <button class="btn arrow" (click)="next()" [disabled]="currentPage === totalPages">
+    <span class="arrow-icon">›</span>
+  </button>
+</div>

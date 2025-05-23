@@ -1,0 +1,57 @@
+.pagination {
+  width: 273px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 31px;
+  height: 31px;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+.btn.arrow,
+.page {
+  color: #3A3A3A;            
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+
+.arrow-icon {
+  display: inline-block;
+  font-size: 18px;    
+  text-align: center;
+}
+
+.pages {
+  display: flex;
+  gap: 16px;
+  margin: 0 24px;             
+  align-items: center;
+}
+
+.page {
+  font-size: 16px;          
+  user-select: none;
+  cursor: pointer;
+
+  &.active {
+    color: #375FFF;           
+  }
+
+  &:not(.active):hover {
+    text-decoration: underline;
+  }
+}

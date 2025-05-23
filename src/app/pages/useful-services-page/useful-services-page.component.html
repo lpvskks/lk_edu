@@ -1,0 +1,9 @@
+<ng-container *ngIf="services$ | async as services">
+  <div class="services-list">
+  </div>
+
+  <app-pagination
+    [metaData]="services.metaData"
+    (pageChange)="onPageChange($event)">
+  </app-pagination>
+</ng-container>

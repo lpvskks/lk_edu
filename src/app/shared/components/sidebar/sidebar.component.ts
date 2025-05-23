@@ -43,6 +43,7 @@ export class SidebarComponent {
       icon: '/icons/menu/Link.svg',
       alt: 'links',
       label: 'SIDEBAR.USEFUL_SERVICES',
+      route: '/usefulservices'
     },
     {
       icon: '/icons/menu/Map.svg',
