@@ -9,6 +9,7 @@ import { switchMap, tap, shareReplay } from 'rxjs/operators';
 import { UserType } from '../../shared/types/profile/profile';
 import { PagedResourcesResponse } from '../../shared/types/useful-services.ts/useful-services';
 import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
+import { UsefulServicesCardComponent } from './components/useful-services-card/useful-services-card.component';
 
 @Component({
   selector: 'app-useful-services-page',
@@ -17,6 +18,7 @@ import { PaginationComponent } from '../../shared/components/pagination/paginati
     CommonModule,
     TranslateModule,
     PaginationComponent,
+    UsefulServicesCardComponent
   ],
   templateUrl: './useful-services-page.component.html',
   styleUrls: ['./useful-services-page.component.scss']
@@ -27,7 +29,7 @@ export class UsefulServicesPageComponent {
   private usefulServices = inject(UsefulServicesService);
 
   private page$ = new BehaviorSubject<number>(1);
-  pageSize = 20;
+  pageSize = 3;
 
   services$: Observable<PagedResourcesResponse> = this.page$.pipe(
     switchMap(page =>

@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-content">
+    <div class="header">
+      <h4 class="title">{{ service.title }}</h4>
+      <button class="go-btn" (click)="onNavigate()">Перейти на сайт
+        <img
+      src="/icons/useful-services/Arrow_Up_Right_MD.svg"
+      alt=""
+      class="go-btn__icon"
+    />
+      </button>
+    </div>
+
+    <div class="info">
+      <img
+        *ngIf="logoUrl"
+        [src]="logoUrl"
+        alt="{{ service.title }} logo"
+        class="logo"
+      />
+       <div class="text-block">
+        <p class="description">{{ service.description }}</p>
+        <p class="terms-label">Условия предоставления</p>
+        <div class="terms">
+          <p>{{ service.termsOfDisctribution || '—' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

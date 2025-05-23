@@ -37,7 +37,10 @@ export class UsefulServicesService {
     this.cache.set(key, req$);
     return req$;
   }
-
+    getFileUrl(fileId: string): string {
+    return `${API_URL}/Files/${fileId}`;
+  }
+  
   private mapUserTypesToCategories(userTypes: UserType[]): string[] {
     const isStu  = userTypes.includes('Student');
     const isEmp  = userTypes.includes('Employee');
