@@ -2,7 +2,8 @@
   <div class="card-content">
     <div class="header">
       <h4 class="title">{{ service.title }}</h4>
-      <button class="go-btn" (click)="onNavigate()">Перейти на сайт
+      <button class="go-btn" (click)="onNavigate()">
+         {{ 'USEFUL-SERVICES.GO_TO_SITE' | translate }}
         <img
       src="/icons/useful-services/Arrow_Up_Right_MD.svg"
       alt=""
@@ -20,7 +21,9 @@
       />
        <div class="text-block">
         <p class="description">{{ service.description }}</p>
-        <p class="terms-label">Условия предоставления</p>
+        <p class="terms-label">
+           {{ 'USEFUL-SERVICES.TERMS_LABEL' | translate }}
+        </p>
         <div class="terms">
           <p>{{ service.termsOfDisctribution || '—' }}</p>
         </div>

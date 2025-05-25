@@ -33,7 +33,7 @@
     "ADDRESS": "Адрес"
   },
   "PROFILE-INFO": {
-     "EDUCATION_TAB": "Образование",
+    "EDUCATION_TAB": "Образование",
     "WORK_TAB": "Работа",
     "EDU_LEVEL": "Уровень образования",
     "EDU_STATUS": "Статус обучения",
@@ -57,5 +57,9 @@
     "POST_TYPE": "Тип должности",
     "DATE_START": "Дата приёма",
     "DATE_END": "Дата увольнения"
+  },
+  "USEFUL-SERVICES": {
+    "TERMS_LABEL": "Условия предоставления",
+    "GO_TO_SITE": "Перейти на сайт"
   }
 }

@@ -22,7 +22,7 @@
   },
 
   "PROFILE": {
-       "PERSONAL_DATA": "Personal Data",
+    "PERSONAL_DATA": "Personal Data",
     "GENDER": "Gender",
     "BIRTH_DATE": "Birth Date",
     "CITIZENSHIP": "Citizenship",
@@ -59,5 +59,9 @@
     "POST_TYPE": "Post type",
     "DATE_START": "Start date",
     "DATE_END": "End date"
+  },
+  "USEFUL-SERVICES": {
+    "TERMS_LABEL": "Terms of service",
+    "GO_TO_SITE": "Visit website"
   }
 }

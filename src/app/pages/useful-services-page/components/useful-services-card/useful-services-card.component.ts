@@ -2,10 +2,14 @@ import { Component, inject, Input } from '@angular/core';
 import { ResourceItem } from '../../../../shared/types/useful-services.ts/useful-services';
 import { CommonModule } from '@angular/common';
 import { UsefulServicesService } from '../../../../core/services/useful-services/useful-services.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-useful-services-card',
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    TranslateModule
+  ],
   templateUrl: './useful-services-card.component.html',
   styleUrl: './useful-services-card.component.scss'
 })
