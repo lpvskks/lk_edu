@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
-import { API_URL } from '../../constants/constants';
+import { API_URL } from '../../constants/api-url';
 import { Profile } from '../../../shared/types/profile/profile';
 import { EducationRecord } from '../../../shared/types/profile/education';
 import { WorkRecord } from '../../../shared/types/profile/work-info';

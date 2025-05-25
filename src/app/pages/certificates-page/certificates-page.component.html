@@ -1,0 +1,47 @@
+<div class="certificates-container">
+  <h2>Заказ справки</h2>
+  <div class="certificates-content">
+    
+    <app-role-selector
+      [visible]="hasBothRoles"
+      [selectedRole]="selectedRole"
+      (roleChange)="onRoleChange($event)"
+    ></app-role-selector>
+
+      <div class="certificates-info">
+      <ng-container *ngIf="selectedRole === 'student'">
+        <ng-container *ngIf="educationRecord$ | async as rec">
+          <app-info-sections
+            [role]="'student'"
+            [educationEntries]="rec.educationEntries"
+            [selectedIndex]="selectedIndex"
+            (selectedIndexChange)="onSectionIndexChange($event)"
+          ></app-info-sections>
+        </ng-container>
+      </ng-container>
+
+      <ng-container *ngIf="selectedRole === 'employee'">
+        <ng-container *ngIf="workRecord$ | async as work">
+          <app-info-sections
+            [role]="'employee'"
+            [workPosts]="work.posts"
+            [selectedIndex]="selectedIndex"
+            (selectedIndexChange)="onSectionIndexChange($event)"
+          ></app-info-sections>
+        </ng-container>
+      </ng-container>
+
+      <app-order-certificates
+        [types]="typesForDropdown"
+        [kinds]="kindsForDropdown"
+        (order)="onOrder($event)"
+      ></app-order-certificates>
+
+      <app-certificate-list
+       [certificates]="certificatesList"
+        (downloadSignature)="onDownloadSignature($event)"
+        (downloadCertificate)="onDownloadCertificate($event)"
+      ></app-certificate-list>
+    </div>
+  </div>
+</div>

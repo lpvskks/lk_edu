@@ -5,7 +5,7 @@ body {
 }
 
 h1 {
-  color: $h1-color;
+  color: $h-color;
   font-size: 40px;
   font-weight: 500;
   margin: 0;
@@ -14,26 +14,31 @@ h1 {
   }
 }
 h2 {
+  color: $h-color;
   font-size: 32px;
   font-weight: 500;
   margin: 0;
 }
 h3 {
+  color: $h-color;
   font-size: 20px;
   font-weight: 500;
   margin: 0;
 }
 h4 {
+  color: $h-color;
   font-size: 16px;
   font-weight: 400;
   margin: 0;
 }
 p1 {
+  color: $h-color;
   font-size: 16px;
   font-weight: 400;
   margin: 0;
 }
 p2 {
+  color: $h-color;
   font-size: 14px;
   font-weight: 400;
   margin: 0;

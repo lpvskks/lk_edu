@@ -1,0 +1,43 @@
+<div class="order-section">
+  <h3>Заказать справку</h3>
+
+  <mat-form-field
+    appearance="outline"
+    floatLabel="always"
+    class="wide-field type-field"
+  >
+    <mat-label>Тип справки</mat-label>
+    <mat-select [(value)]="selectedType">
+      <mat-option *ngFor="let t of types" [value]="t.value">
+        {{ t.viewValue }}
+      </mat-option>
+    </mat-select>
+    <img
+      matSuffix
+      src="/icons/certificates/Chevron_Down.svg"
+      class="custom-select-arrow"
+      alt=""
+    />
+  </mat-form-field>
+
+  <mat-form-field
+    appearance="outline"
+    floatLabel="always"
+    class="wide-field kind-field"
+  >
+    <mat-label>Вид справки</mat-label>
+    <mat-select [(value)]="selectedKind">
+      <mat-option *ngFor="let k of kinds" [value]="k.value">
+        {{ k.viewValue }}
+      </mat-option>
+    </mat-select>
+    <img
+      matSuffix
+      src="/icons/certificates/Chevron_Down.svg"
+      class="custom-select-arrow"
+      alt=""
+    />
+  </mat-form-field>
+
+  <button class="order-btn" (click)="onOrderClick()">ЗАКАЗАТЬ</button>
+</div>

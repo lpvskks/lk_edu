@@ -37,7 +37,8 @@ export class SidebarComponent {
     {
       icon: '/icons/menu/Reference.svg',
       alt: 'reference',
-      label: 'SIDEBAR.REFERENCES',
+      label: 'SIDEBAR.CERTIFICATES',
+      route: '/certificates'
     },
     {
       icon: '/icons/menu/Link.svg',

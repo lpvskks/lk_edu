@@ -9,7 +9,7 @@
   "SIDEBAR": {
     "PROFILE": "Profile",
     "ADMINISTRATION": "Administration",
-    "REFERENCES": "References",
+    "CERTIFICATES": "Certificates",
     "USEFUL_SERVICES": "Useful Services",
     "EVENTS": "Events",
     "SHOW": "Show sidebar",
@@ -18,7 +18,8 @@
 
   "PAGE_TITLES": {
     "PROFILE": "Profile",
-    "USEFUL_SERVICES":"Useful Services"
+    "USEFUL_SERVICES":"Useful Services",
+    "CERTIFICATES": "Certificates"
   },
 
   "PROFILE": {

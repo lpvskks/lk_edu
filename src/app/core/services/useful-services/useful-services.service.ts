@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of, shareReplay } from 'rxjs';
 import { UserType } from '../../../shared/types/profile/profile';
 import { MetaData, PagedResourcesResponse } from '../../../shared/types/useful-services.ts/useful-services';
-import { API_URL } from '../../constants/constants';
+import { API_URL } from '../../constants/api-url';
 
 @Injectable({ providedIn: 'root' })
 export class UsefulServicesService {

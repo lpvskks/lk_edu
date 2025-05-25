@@ -1,0 +1,126 @@
+.certificates {
+  .certificate-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+
+    .certificate-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding-right: 16px;
+    }
+
+    .certificate-action {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 24px;
+      padding: 8px 0;
+
+      &.info-row--single {
+        grid-template-columns: 1fr;
+      }
+
+      .info-item {
+        display: flex;
+        flex-direction: column;
+
+        &.full-width {
+          grid-column: 1 / -1;
+        }
+
+        .info-label {
+          font-size: 12px;
+          color: #666666;
+          margin: 0 0 4px;
+        }
+
+        .info-value {
+          font-size: 16px;
+          color: #3a3a3a;
+          margin: 0 0 4px;
+        }
+      }
+    }
+
+    .status-button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.4s, opacity 0.4s;
+      padding: 0;
+
+      &.created {
+        background-color: #f9f9f9;
+      }
+      &.in-process {
+        background-color: #f69d1e;
+      }
+      &.finished {
+        background-color: #46b34a;
+      }
+      &:hover {
+        opacity: 0.85;
+      }
+      &:active {
+        opacity: 0.65;
+      }
+
+      .status-text {
+        margin: 5px 12px;
+        color: #f9f9f9;
+      }
+    }
+  }
+
+  .extra-buttons {
+    display: flex;
+    gap: 8px;
+    transition: background-color 0.4s, opacity 0.4s;
+  }
+
+  .extra-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    .btn-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    &.signature-button {
+      background-color: #f9f9f9;
+      color: #375fff;
+      border: 1px solid #375fff;
+    }
+    &.download-button {
+      background-color: #375fff;
+      color: #f9f9f9;
+      margin-right: 12px;
+    }
+    &:hover {
+      opacity: 0.85;
+    }
+    &:active {
+      opacity: 0.65;
+    }
+  }
+}
