@@ -1,0 +1,132 @@
+.order-section {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+
+.order-section h3 {
+  margin: 0 0 16px;
+}
+
+.order-controls {
+  display: flex;
+}
+
+.type-field {
+  width: 337px;
+  height: 56px !important;
+  margin-right: 16px;
+}
+
+.kind-field {
+  width: 250px;
+  height: 56px !important;
+  margin-right: 16px;
+}
+
+.order-btn {
+  width: 236px;
+  height: 56px;
+  background-color: #375fff;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.4s, opacity 0.4s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:active {
+    opacity: 0.75;
+  }
+}
+
+mat-form-field,
+mat-form-field * {
+  font-family: "Raleway", sans-serif;
+  font-size: 15.6px;
+}
+
+::ng-deep .mat-mdc-form-field {
+  --mdc-outlined-text-field-container-shape: 8px;
+  --mdc-outlined-text-field-outline-color: #3a3a3a50;
+  --mdc-outlined-text-field-outline-color-hover: #3a3a3a50;
+}
+
+::ng-deep .mat-mdc-select-arrow-wrapper {
+  display: none !important;
+}
+
+.custom-select-arrow {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media (min-width: 1920px) {
+  mat-form-field.kind-field.single-role {
+    width: 450px !important; 
+  }
+   mat-form-field.type-field.single-role {
+    width: 730px !important;
+  }
+}
+
+@media (max-width: 1536px) {
+  mat-form-field.type-field.single-role {
+    width: 650px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+   mat-form-field.kind-field.single-role {
+    width: 210px !important; 
+  }
+   mat-form-field.type-field.single-role {
+    width: 458px !important;
+  }
+}
+
+@media (max-width: 900px) {
+    mat-form-field.kind-field.single-role {
+    width: 180px !important; 
+  }
+   mat-form-field.type-field.single-role {
+    width: 358px !important;
+  }
+  .order-btn {
+    width: 165px;
+  }
+}
+
+@media (max-width: 600px) {
+    mat-form-field.kind-field.single-role {
+    width: 504px !important; 
+    margin-bottom: 16px;
+  }
+   mat-form-field.type-field.single-role {
+    width: 504px !important;
+    margin-bottom: 16px;
+  }
+  .order-btn {
+    width: 504px;
+  }
+}
+
+@media (max-width: 375px) {
+    mat-form-field.kind-field.single-role {
+    width: 311px !important; 
+    height: 46px;
+    margin-bottom: 16px;
+  }
+   mat-form-field.type-field.single-role {
+    width: 311px !important;
+     height: 46px;
+    margin-bottom: 16px;
+  }
+  .order-btn {
+     height: 46px;
+    width: 311px;
+  }
+}

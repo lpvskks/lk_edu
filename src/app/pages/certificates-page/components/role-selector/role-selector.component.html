@@ -1,0 +1,18 @@
+<div class="role-selector" *ngIf="visible">
+  <div class="role-selector__box">
+    <p
+      class="role-selector__option"
+      [class.role-selector__option--active]="selectedRole === 'student'"
+      (click)="selectRole('student')"
+    >
+      Студент
+    </p>
+    <p
+      class="role-selector__option"
+      [class.role-selector__option--active]="selectedRole === 'employee'"
+      (click)="selectRole('employee')"
+    >
+      Сотрудник
+    </p>
+  </div>
+</div>

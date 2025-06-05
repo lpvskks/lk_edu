@@ -1,0 +1,77 @@
+<div class="certificates">
+  <ng-container *ngIf="certificates.length">
+    <div *ngFor="let cert of certificates" class="certificate-item">
+      <div class="certificate-content">
+        <div class="info-row" *ngIf="cert.dateOfForming">
+          <div class="info-item full-width">
+            <p class="info-value">
+              Справка от
+              {{ cert.dateOfForming | date : "dd.MM.yyyy HH:mm" }}
+            </p>
+
+            <p class="info-label">
+              Тип справки:
+              {{
+                cert.typeEnumDto?.displayName ||
+                  cert.staffTypeEnumDto?.displayName
+              }}
+            </p>
+
+            <p class="info-label">
+              Вид справки: {{ cert.receiveTypeEnumDto.displayName }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="certificate-action">
+        <ng-container *ngIf="cert.status === 'Finished' && cert.receiveType === 'Electronic'">
+          <div class="extra-buttons">
+            <button
+              class="extra-button signature-button"
+              (click)="onDownloadSignature(cert)"
+            >
+              <img
+                src="/icons/certificates/Download_Blue.svg"
+                alt="Подпись"
+                class="btn-icon"
+              />
+              <span class="btn-text">Подпись</span>
+            </button>
+
+            <button
+              class="extra-button download-button"
+              (click)="onDownloadCertificate(cert)"
+            >
+              <img
+                src="/icons/certificates/Download_White.svg"
+                alt="Скачать"
+                class="btn-icon"
+              />
+              <span class="btn-text">Справку</span>
+            </button>
+          </div>
+        </ng-container>
+
+        <button
+          class="status-button"
+          [ngClass]="{
+            created: cert.status === 'Created',
+            'in-process': cert.status === 'InProcess',
+            finished: cert.status === 'Finished'
+          }"
+        >
+          <h4 class="status-text">
+            {{
+              cert.status === "Created"
+                ? "Создано"
+                : cert.status === "InProcess"
+                ? "В работе"
+                : "Готово"
+            }}
+          </h4>
+        </button>
+      </div>
+    </div>
+  </ng-container>
+</div>

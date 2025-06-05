@@ -9,7 +9,7 @@
   "SIDEBAR": {
     "PROFILE": "Профиль",
     "ADMINISTRATION": "Администрирование",
-    "REFERENCES": "Справки",
+    "CERTIFICATES": "Справки",
     "USEFUL_SERVICES": "Полезные сервисы",
     "EVENTS": "Мероприятия",
     "SHOW_SIDEBAR": "Показать сайдбар",
@@ -17,7 +17,8 @@
   },
   "PAGE_TITLES": {
     "PROFILE": "Профиль",
-    "USEFUL_SERVICES":"Полезные сервисы"
+    "USEFUL_SERVICES":"Полезные сервисы",
+    "CERTIFICATES": "Справки"
   },
   "PROFILE": {
     "PERSONAL_DATA": "Личные данные",
