@@ -63,3 +63,70 @@ mat-form-field * {
   height: 24px;
   margin-right: 8px;
 }
+
+@media (min-width: 1920px) {
+  mat-form-field.kind-field.single-role {
+    width: 450px !important; 
+  }
+   mat-form-field.type-field.single-role {
+    width: 730px !important;
+  }
+}
+
+@media (max-width: 1536px) {
+  mat-form-field.type-field.single-role {
+    width: 650px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+   mat-form-field.kind-field.single-role {
+    width: 210px !important; 
+  }
+   mat-form-field.type-field.single-role {
+    width: 458px !important;
+  }
+}
+
+@media (max-width: 900px) {
+    mat-form-field.kind-field.single-role {
+    width: 180px !important; 
+  }
+   mat-form-field.type-field.single-role {
+    width: 358px !important;
+  }
+  .order-btn {
+    width: 165px;
+  }
+}
+
+@media (max-width: 600px) {
+    mat-form-field.kind-field.single-role {
+    width: 504px !important; 
+    margin-bottom: 16px;
+  }
+   mat-form-field.type-field.single-role {
+    width: 504px !important;
+    margin-bottom: 16px;
+  }
+  .order-btn {
+    width: 504px;
+  }
+}
+
+@media (max-width: 375px) {
+    mat-form-field.kind-field.single-role {
+    width: 311px !important; 
+    height: 46px;
+    margin-bottom: 16px;
+  }
+   mat-form-field.type-field.single-role {
+    width: 311px !important;
+     height: 46px;
+    margin-bottom: 16px;
+  }
+  .order-btn {
+     height: 46px;
+    width: 311px;
+  }
+}

@@ -5,6 +5,7 @@
     appearance="outline"
     floatLabel="always"
     class="wide-field type-field"
+     [ngClass]="{ 'single-role': !hasBothRoles }"
   >
     <mat-label>Тип справки</mat-label>
     <mat-select [(value)]="selectedType">
@@ -24,6 +25,7 @@
     appearance="outline"
     floatLabel="always"
     class="wide-field kind-field"
+    [ngClass]="{ 'single-role' : !hasBothRoles }"
   >
     <mat-label>Вид справки</mat-label>
     <mat-select [(value)]="selectedKind">

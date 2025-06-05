@@ -11,14 +11,20 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-order-certificates',
-  imports: [FormsModule, MatFormFieldModule, MatSelectModule, MatButtonModule, CommonModule],
+  imports: [
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatButtonModule,
+    CommonModule,
+  ],
   templateUrl: './order-certificates.component.html',
   styleUrl: './order-certificates.component.scss',
 })
 export class OrderCertificatesComponent {
   @Input() types: SelectOption[] = [];
   @Input() kinds: SelectOption[] = [];
-
+  @Input() hasBothRoles: boolean = true;
   selectedType!: string;
   selectedKind!: string;
 
@@ -26,11 +32,11 @@ export class OrderCertificatesComponent {
 
   onOrderClick(): void {
     const payload: OrderInfo = {
-      type: this.selectedType || null, 
+      type: this.selectedType || null,
       receiveType: this.selectedKind as 'Electronic' | 'Paper',
     };
     this.order.emit(payload);
-     this.selectedType = '';
+    this.selectedType = '';
     this.selectedKind = '';
   }
 }

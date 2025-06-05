@@ -124,3 +124,48 @@
     }
   }
 }
+
+@media screen and (max-width: 345px) {
+  .certificates {
+    .certificate-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      /* Убираем фиксированный отступ */
+      padding-bottom: 0;
+    }
+
+    /* Добавляем отступ только в тех .certificate-item, где присутствует .extra-buttons */
+    .certificate-item:has(.extra-buttons) {
+      padding-bottom: 50px; /* или столько, сколько нужно под высоту extra-buttons */
+    }
+
+    .certificate-content {
+      flex: none;
+      width: 212px;
+      padding-right: 8px;
+    }
+
+    .certificate-action {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: calc(100% - 212px);
+    }
+
+    .extra-buttons {
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .extra-button {
+      width: 142px;
+    }
+  }
+}
