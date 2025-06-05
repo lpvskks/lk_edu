@@ -1,11 +1,35 @@
 <div class="profile-container">
   <div class="column column-left">
-    <img
-      *ngIf="avatarUrl$ | async as avatarUrl"
-      [src]="avatarUrl"
-      alt="фото профиля"
-      class="profile-photo"
-    />
+  <div class="photo-wrapper" (click)="onClickPhotoInput(fileInput)">
+      <input
+        type="file"
+        #fileInput
+        accept="image/*"
+        hidden
+        (change)="onFileChange($event)"
+      />
+
+      <div class="photo-overlay-loading" *ngIf="isUploading">
+        <div class="spinner"></div>
+      </div>
+      <img
+        *ngIf="previewUrl; else serverAvatar"
+        [src]="previewUrl"
+        alt="Preview avatar"
+        class="profile-photo"
+      />
+      <ng-template #serverAvatar>
+        <img
+          *ngIf="avatarUrl$ | async as url"
+          [src]="url"
+          alt="фото профиля"
+          class="profile-photo"
+        />
+      </ng-template>
+      <div class="photo-overlay-hover">
+        <span class="overlay-text">Изменить фото</span>
+      </div>
+    </div>
 
     <div class="personal-data">
       <h3 class="info-section__title">
