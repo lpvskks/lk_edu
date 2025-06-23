@@ -1,0 +1,32 @@
+<div class="calendar">
+  <div class="nav">
+    <button class="nav-btn" (click)="changeMonth(-1)">&lt;</button>
+    <div class="nav-title">{{ monthNames[viewDate.getMonth()] }}</div>
+    <button class="nav-btn" (click)="changeMonth(1)">&gt;</button>
+    <div class="spacer"></div>
+    <button class="nav-btn" (click)="changeYear(-1)">&lt;</button>
+    <div class="nav-title">{{ viewDate.getFullYear() }}</div>
+    <button class="nav-btn" (click)="changeYear(1)">&gt;</button>
+  </div>
+
+  <div class="weekdays">
+    <div *ngFor="let wd of weekDayNames" class="weekday">{{ wd }}</div>
+  </div>
+
+  <div class="days">
+    <button
+      *ngFor="let cell of calendar"
+      class="day"
+      [class.out-month]="!cell.inMonth"
+      [class.selected]="isSelected(cell)"
+      (click)="selectDay(cell)"
+    >
+      {{ cell.date.getDate() }}
+    </button>
+  </div>
+
+  <div class="footer">
+    <button class="ok" (click)="confirm()">Ок</button>
+    <button class="cancel" (click)="cancel()">Отмена</button>
+  </div>
+</div>

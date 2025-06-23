@@ -1,0 +1,16 @@
+<div class="events-container">
+  <app-search-container (search)="onSearch($event)"> </app-search-container>
+
+  <ng-container *ngIf="events$ | async as data">
+    <div class="events-list">
+      
+    </div>
+
+    <app-pagination
+      class="pagination-container"
+      [metaData]="data.metaData"
+      (pageChange)="onPageChange($event)"
+    >
+    </app-pagination>
+  </ng-container>
+</div>

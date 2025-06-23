@@ -18,7 +18,8 @@
   "PAGE_TITLES": {
     "PROFILE": "Профиль",
     "USEFUL_SERVICES":"Полезные сервисы",
-    "CERTIFICATES": "Справки"
+    "CERTIFICATES": "Справки",
+    "EVENTS": "Мероприятия"
   },
   "PROFILE": {
     "PERSONAL_DATA": "Личные данные",

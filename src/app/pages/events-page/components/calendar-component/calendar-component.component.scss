@@ -1,0 +1,98 @@
+:host {
+  display: block;
+  max-width: 285px;
+  aspect-ratio: 285 / 332;
+  background: #fff;
+  font-family: sans-serif;
+  color: #222;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #E0E0E0;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+.nav-btn {
+  border: none;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #222;
+}
+.nav-title {
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 48px;
+  text-align: center;
+}
+.spacer { flex: 1; }
+
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+  margin-bottom: 6px;
+}
+.weekday {
+  text-align: center;
+  font-size: 12px;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 3px;
+  flex-grow: 1;
+}
+.day {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transition:  0.2s;
+  color: #222;
+}
+.day:hover {
+  background: rgba(0, 123, 255, 0.1);
+}
+.out-month {
+  color: #C0C0C0;
+  cursor: default;
+}
+.selected {
+  border: 2px solid #007BFF;
+  color: #007BFF;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.footer .cancel,
+.footer .ok {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
