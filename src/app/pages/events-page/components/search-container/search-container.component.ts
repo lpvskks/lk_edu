@@ -3,6 +3,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { CalendarComponentComponent } from '../calendar-component/calendar-component.component';
 import { CommonModule } from '@angular/common';
+import { EventCardComponent } from '../event-card/event-card.component';
 
 export interface EventsFilter {
   name: string;
@@ -16,7 +17,7 @@ export interface EventsFilter {
     ReactiveFormsModule,
     MatInputModule,
     CalendarComponentComponent,
-    CommonModule,
+    CommonModule
   ],
   templateUrl: './search-container.component.html',
   styleUrls: ['./search-container.component.scss'],

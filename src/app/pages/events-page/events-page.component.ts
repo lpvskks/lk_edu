@@ -10,19 +10,31 @@ import {
 } from './components/search-container/search-container.component';
 import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
 import { PublicEventsResponse } from '../../shared/types/events/events';
+import { EventCardComponent } from './components/event-card/event-card.component';
+import { LayoutComponent } from '../../shared/components/layout/layout.component';
 
 @Component({
   selector: 'app-events-page',
   standalone: true,
-  imports: [CommonModule, SearchContainerComponent, PaginationComponent],
+  imports: [
+    CommonModule,
+     SearchContainerComponent, 
+     PaginationComponent,
+    EventCardComponent
+  ],
   templateUrl: './events-page.component.html',
   styleUrls: ['./events-page.component.scss'],
 })
 export class EventsPageComponent {
   private eventsService = inject(EventsService);
+  private layout = inject(LayoutComponent);
   private pageSize = 6;
   private page$ = new BehaviorSubject<number>(1);
   private filter$ = new BehaviorSubject<EventsFilter>({ name: '', date: null });
+
+   constructor() {
+    this.layout.setPageTitle('PAGE_TITLES.EVENTS');
+  }
 
   events$: Observable<PublicEventsResponse> = combineLatest({
     page: this.page$,
@@ -31,7 +43,6 @@ export class EventsPageComponent {
     switchMap(({ page, filter }) =>
       this.eventsService.getPublicEvents(page, this.pageSize, filter)
     ),
-    tap((response) => console.log('Ответ с /api/Events/public:', response)),
     tap((res) => (this.currentPage = res.metaData.pageNumber)),
     tap((res) => (this.totalPages = res.metaData.pageCount)),
     shareReplay({ bufferSize: 1, refCount: true })

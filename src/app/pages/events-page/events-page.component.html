@@ -2,9 +2,12 @@
   <app-search-container (search)="onSearch($event)"> </app-search-container>
 
   <ng-container *ngIf="events$ | async as data">
-    <div class="events-list">
-      
-    </div>
+  <div class="events-list">
+    <app-event-card
+      *ngFor="let e of data.results"
+      [event]="e">
+    </app-event-card>
+  </div>
 
     <app-pagination
       class="pagination-container"

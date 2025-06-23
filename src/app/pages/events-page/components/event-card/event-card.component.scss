@@ -1,0 +1,64 @@
+.event-card {
+  display: flex;
+  width: 558px;
+  height: 208px;
+  background: #F9F9F9;  
+  border-radius: 8px;  
+  padding-block: 12px;
+  padding-inline: 24px;
+}
+
+.event-image {
+  flex-shrink: 0;
+  width: 260px;
+  height: 184px;
+  object-fit: cover;
+  margin: auto 0;   
+}
+
+.event-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px; 
+  padding-right: 20px;  
+}
+
+.event-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #666666;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 12px;
+  color: #666666;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 14px;
+  color: #333333;
+}
+.finished-btn {
+  margin-top: 0px;
+  margin-bottom: 12px;
+  padding: 5px 12px;            
+  background-color: #46B34A;    
+  border: none;
+  border-radius: 8px;
+  cursor: default;
+  align-self: flex-start;       
+}
+
+h4 {
+  color: #FFFFFF;
+}
+p{
+  margin: 0;
+}
