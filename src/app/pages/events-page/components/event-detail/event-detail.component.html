@@ -1,0 +1,92 @@
+<div class="detail-container">
+  <div class="detail-header">
+    <h2 class="detail-title">{{ event.title }}</h2>
+    <button *ngIf="eventFinished" class="finished-btn">Завершилось</button>
+    <ng-container *ngIf="!eventFinished && event.isRegistrationRequired">
+      <button
+        *ngIf="!authService.isAuth"
+        (click)="onParticipateClick()"
+        class="participate-btn"
+      >
+        БУДУ УЧАСТВОВАТЬ
+      </button>
+      <button
+        *ngIf="authService.isAuth && !isParticipant"
+        (click)="onParticipateClick()"
+        class="participate-btn"
+      >
+        БУДУ УЧАСТВОВАТЬ
+      </button>
+      <button
+        *ngIf="authService.isAuth && isParticipant"
+        class="participating-btn"
+      >
+        УЧАСТВУЮ
+      </button>
+    </ng-container>
+  </div>
+
+  <div
+    class="login-modal-backdrop"
+    *ngIf="showLoginModal"
+    (click)="closeModal()"
+  >
+    <div class="login-modal" (click)="$event.stopPropagation()">
+      <h2>Пожалуйста, авторизуйтесь</h2>
+      <button (click)="closeModal()">Закрыть</button>
+    </div>
+  </div>
+
+  <div class="detail-card">
+    <div class="description-section">
+      <h4 class="section-label">Описание</h4>
+      <p class="section-value">{{ event.description }}</p>
+      <img class="event-image-md" [src]="pictureUrl" [alt]="event.title" />
+    </div>
+
+    <div class="section-content">
+      <div class="info-row info-row--single">
+        <div class="info-item full-width">
+          <p class="info-label">Дата окончания регистрации</p>
+          <p class="info-value">
+            {{ event.registrationLastDate | date : "dd.MM.yyyy" }}
+          </p>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-item">
+          <p class="info-label">Дата(ы) проведения</p>
+          <p class="info-value">
+            {{ event.dateTimeFrom | date : "dd.MM.yyyy" }}
+            ({{ event.dateTimeFrom | date : "HH:mm" }} –
+            {{ event.dateTimeTo | date : "HH:mm" }})
+          </p>
+        </div>
+        <div class="info-item">
+          <p class="info-label">Формат мероприятия</p>
+          <p class="info-value">{{ formatLabel }}</p>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-item" *ngIf="event.format == 'Offline'">
+          <p class="info-label">Адрес</p>
+          <p class="info-value">{{ event.addressName }}</p>
+        </div>
+        <div class="info-item">
+          <div class="map-container">
+            <img
+              *ngIf="event.format === 'Offline'"
+              [src]="mapUrl"
+              width="578"
+              height="200"
+              alt="Карта местоположения"
+              class="map-image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

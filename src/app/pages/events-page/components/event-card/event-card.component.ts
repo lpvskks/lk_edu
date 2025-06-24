@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { EventDto } from '../../../../shared/types/events/events';
 import { EventsService } from '../../../../core/services/events/events.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-event-card',
   imports: [
     CommonModule,
+    RouterModule
   ],
   templateUrl: './event-card.component.html',
   styleUrl: './event-card.component.scss'

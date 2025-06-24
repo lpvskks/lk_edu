@@ -18,9 +18,9 @@ import { LayoutComponent } from '../../shared/components/layout/layout.component
   standalone: true,
   imports: [
     CommonModule,
-     SearchContainerComponent, 
-     PaginationComponent,
-    EventCardComponent
+    SearchContainerComponent,
+    PaginationComponent,
+    EventCardComponent,
   ],
   templateUrl: './events-page.component.html',
   styleUrls: ['./events-page.component.scss'],
@@ -32,7 +32,7 @@ export class EventsPageComponent {
   private page$ = new BehaviorSubject<number>(1);
   private filter$ = new BehaviorSubject<EventsFilter>({ name: '', date: null });
 
-   constructor() {
+  constructor() {
     this.layout.setPageTitle('PAGE_TITLES.EVENTS');
   }
 

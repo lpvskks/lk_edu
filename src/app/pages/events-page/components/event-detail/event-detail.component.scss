@@ -1,0 +1,136 @@
+.detail-container {
+  max-width: 1232px;
+  margin: 0 auto;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.participate-btn,
+.finished-btn {
+  padding: 15px 35px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.participate-btn {
+  background-color: #375fff;
+  color: #ffffff;
+}
+
+.finished-btn {
+  background-color: #46b34a;
+  color: #ffffff;
+}
+
+.detail-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 28px 32px;
+}
+
+.description-section {
+  margin-bottom: 32px;
+
+  .section-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 8px;
+    color: #333333;
+  }
+
+  .section-value {
+    font-size: 14px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.5;
+    margin: 0 0 16px;
+    color: #3a3a3a;
+    font-weight: 500;
+  }
+
+  .event-image-md {
+    width: 100%;
+    max-width: 1168px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.section-content {
+  .info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+
+    &--single {
+      grid-template-columns: 1fr;
+    }
+
+    .info-item {
+      display: flex;
+      flex-direction: column;
+
+      &.full-width {
+        grid-column: 1 / -1;
+      }
+
+      .info-label {
+        font-size: 12px;
+        color: #666666;
+        margin: 0 0 4px;
+      }
+      .info-value {
+        font-size: 16px;
+        color: #3a3a3a;
+        margin: 0;
+      }
+    }
+  }
+
+  .map-container {
+    width: 578px;
+    height: 200px;
+    overflow: hidden;
+  }
+}
+
+.participating-btn {
+  background-color: none;
+  color: #375fff;
+  padding: 14.5px 72px;
+  border-radius: 4px;
+  border: #375fff solid 3px;
+}
+
+.login-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.login-modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+}
