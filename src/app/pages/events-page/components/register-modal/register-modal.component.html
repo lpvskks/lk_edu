@@ -1,0 +1,51 @@
+<div class="modal-backdrop" (click)="close()">
+  <div class="register-modal" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="close()">
+      <img src="/icons/events/Close_MD.jpg" alt="Закрыть" />
+    </button>
+    <h3>Регистрация на мероприятие</h3>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="events-name-input"
+      >
+        <mat-label>ФИО</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="events-name-input"
+      >
+        <mat-label>Телефон</mat-label>
+        <input matInput formControlName="phone" />
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="events-name-input"
+      >
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="events-name-input"
+      >
+        <mat-label>Дополнительная информация</mat-label>
+        <textarea matInput formControlName="additionalInfo" rows="3"></textarea>
+      </mat-form-field>
+
+      <div class="buttons">
+        <button type="submit" class="save-btn">СОХРАНИТЬ</button>
+        <button (click)="close()" class="cancel-btn">ОТМЕНИТЬ</button>
+      </div>
+    </form>
+  </div>
+</div>

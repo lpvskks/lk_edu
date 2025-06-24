@@ -46,3 +46,10 @@ export interface EventDetailDto {
   author: AuthorDto;
   participants: ParticipantDto[];
 }
+
+export interface RegistrationData {
+  name: string;
+  phone: string;
+  email: string;
+  additionalInfo: string;
+}

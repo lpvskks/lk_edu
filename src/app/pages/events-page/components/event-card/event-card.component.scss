@@ -28,8 +28,17 @@
   margin: 0 0 12px;
   font-size: 18px;
   line-height: 1.2;
-  color: #666666;
+  color: #3A3A3A;
   cursor: pointer;
+}
+.event-title a {
+  color: inherit;           
+  text-decoration: none;  
+}
+
+.event-title a:hover {
+  text-decoration: underline;  
+  color: inherit;             
 }
 
 .field {

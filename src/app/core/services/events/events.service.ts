@@ -6,7 +6,10 @@ import { API_URL } from '../../constants/api-url';
 import { PublicEventsResponse } from '../../../shared/types/events/events';
 import { EventsFilter } from '../../../pages/events-page/components/search-container/search-container.component';
 import { AuthService } from '../auth/auth.service';
-import { EventDetailDto } from '../../../shared/types/events/event-details';
+import {
+  EventDetailDto,
+  RegistrationData,
+} from '../../../shared/types/events/event-details';
 
 @Injectable({ providedIn: 'root' })
 export class EventsService {
@@ -82,5 +85,10 @@ export class EventsService {
   registerInner(eventId: string): Observable<void> {
     const url = `${API_URL}/Events/register/inner`;
     return this.http.post<void>(url, { eventId });
+  }
+  registerExternal(eventId: string, data: RegistrationData): Observable<void> {
+    const url = `${API_URL}/Events/register/external`;
+    const body = { eventId, ...data };
+    return this.http.post<void>(url, body);
   }
 }

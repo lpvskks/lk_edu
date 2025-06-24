@@ -26,16 +26,12 @@
     </ng-container>
   </div>
 
-  <div
-    class="login-modal-backdrop"
+  <app-register-modal
     *ngIf="showLoginModal"
-    (click)="closeModal()"
+    (saved)="onOuterRegister($event)"
+    (canceled)="showLoginModal = false"
   >
-    <div class="login-modal" (click)="$event.stopPropagation()">
-      <h2>Пожалуйста, авторизуйтесь</h2>
-      <button (click)="closeModal()">Закрыть</button>
-    </div>
-  </div>
+  </app-register-modal>
 
   <div class="detail-card">
     <div class="description-section">
