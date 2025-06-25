@@ -1,0 +1,11 @@
+<div class="participant-item">
+  <p class="participant-name">
+    {{ user.lastName }} {{ user.firstName }} {{ user.patronymic }}
+  </p>
+  <p class="participant-detail">
+    Дата рождения: {{ user.birthDate | date:'dd.MM.yyyy' }}
+  </p>
+  <p class="participant-detail">
+    Email: {{ user.email }}
+  </p>
+</div>

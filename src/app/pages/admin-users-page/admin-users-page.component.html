@@ -1,20 +1,48 @@
 <div class="container">
-  <mat-form-field appearance="outline" floatLabel="always" class="search-input">
-    <ng-container matPrefix>
-      <img
-        src="icons/administration/search.svg"
-        alt="Search"
-        class="search_icon"
+  <div class="search-row">
+    <mat-form-field
+      appearance="outline"
+      floatLabel="always"
+      class="search-input"
+    >
+      <ng-container matPrefix>
+        <img
+          src="icons/administration/search.svg"
+          alt="Search"
+          class="search_icon"
+        />
+      </ng-container>
+      <input
+        #nameInput
+        matInput
+        placeholder="Введите имя"
+        (input)="onNameChange(nameInput.value)"
       />
-    </ng-container>
-    <input matInput placeholder="Введите ФИО" />
-  </mat-form-field>
-  <button class="search_btn">НАЙТИ</button>
-  <div class="controls">
-    <app-alphabet (letterSelected)="($event)"></app-alphabet>
+    </mat-form-field>
+    <button class="search_btn">НАЙТИ</button>
+  </div>
+
+  <div class="controls-row">
+    <app-alphabet (letterSelected)="onLastNameFilter($event)"></app-alphabet>
     <div class="buttons">
       <img src="icons/administration/Hamburger_MD.svg" class="btn" />
       <img src="icons/administration/More_Grid_Big.svg" class="btn" />
     </div>
   </div>
+
+  <ng-container *ngIf="users$ | async as data">
+    <div class="users-container">
+      <app-participant-item
+        *ngFor="let u of data.results"
+        [user]="u"
+      ></app-participant-item>
+    </div>
+
+    <div class="pagination-container">
+      <app-pagination
+        [metaData]="data.metaData"
+        (pageChange)="onPageChange($event)"
+      ></app-pagination>
+    </div>
+  </ng-container>
 </div>
