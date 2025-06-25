@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-form-field appearance="outline" floatLabel="always" class="search-input">
+    <ng-container matPrefix>
+      <img
+        src="icons/administration/search.svg"
+        alt="Search"
+        class="search_icon"
+      />
+    </ng-container>
+    <input matInput placeholder="Введите ФИО" />
+  </mat-form-field>
+  <button class="search_btn">НАЙТИ</button>
+  <div class="controls">
+    <app-alphabet (letterSelected)="($event)"></app-alphabet>
+    <div class="buttons">
+      <img src="icons/administration/Hamburger_MD.svg" class="btn" />
+      <img src="icons/administration/More_Grid_Big.svg" class="btn" />
+    </div>
+  </div>
+</div>
