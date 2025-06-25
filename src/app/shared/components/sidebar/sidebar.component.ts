@@ -33,6 +33,7 @@ export class SidebarComponent {
       icon: '/icons/menu/Administrator.svg',
       alt: 'admin',
       label: 'SIDEBAR.ADMINISTRATION',
+      route: '/admin'
     },
     {
       icon: '/icons/menu/Reference.svg',

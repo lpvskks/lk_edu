@@ -20,7 +20,8 @@
     "PROFILE": "Profile",
     "USEFUL_SERVICES":"Useful Services",
     "CERTIFICATES": "Certificates",
-    "EVENTS": "Events"
+    "EVENTS": "Events",
+    "ADMINISTRATION":"Administration"
   },
 
   "PROFILE": {

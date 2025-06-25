@@ -19,7 +19,8 @@
     "PROFILE": "Профиль",
     "USEFUL_SERVICES":"Полезные сервисы",
     "CERTIFICATES": "Справки",
-    "EVENTS": "Мероприятия"
+    "EVENTS": "Мероприятия",
+    "ADMINISTRATION":"Администрирование"
   },
   "PROFILE": {
     "PERSONAL_DATA": "Личные данные",

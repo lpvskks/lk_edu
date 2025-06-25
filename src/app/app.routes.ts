@@ -7,6 +7,7 @@ import { UsefulServicesPageComponent } from './pages/useful-services-page/useful
 import { CertificatesPageComponent } from './pages/certificates-page/certificates-page.component';
 import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { EventDetailComponent } from './pages/events-page/components/event-detail/event-detail.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 
 export const routes: Routes = [
   {path: '', component: LayoutComponent, children: [
@@ -15,6 +16,7 @@ export const routes: Routes = [
     {path: 'profile', component: ProfilePageComponent},
     {path: 'usefulservices', component: UsefulServicesPageComponent},
     {path: 'certificates', component: CertificatesPageComponent},
+    {path: 'admin', component: AdminPageComponent},
   ]},
   {path: 'login', component: LoginPageComponent},
  // {path: '',  canActivate: [canActivateAuth]}
