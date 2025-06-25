@@ -37,6 +37,12 @@ export class AdminUsersPageComponent {
   private emailFilter$ = new BehaviorSubject<string | undefined>(undefined);
 
   private readonly pageSize = 9;
+  
+   viewMode: 'list' | 'card' = 'list';
+
+  setView(mode: 'list' | 'card') {
+    this.viewMode = mode;
+  }
 
   users$: Observable<UserListResponse> = this.page$
     .pipe(
