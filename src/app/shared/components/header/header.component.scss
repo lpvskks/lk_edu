@@ -1,66 +1,53 @@
-header {
+:host {
+  display: block;
+}
+
+.app-header {
   position: relative;
   display: flex;
-  padding-top: 48px;
-  justify-content: space-between;
   align-items: center;
-  padding-right: 200px;
-  padding-left: 82px;
+  justify-content: space-between;
+  padding-inline: clamp(32px, 5vw, 200px);
+  padding-top: clamp(0px, 2vw, 48px);
   height: 43px;
 
-  @media (max-width: 1536px) {
-    padding-top: 43px;
-    padding-right: 152px;
-    padding-left: 35px;
-    height: 43px;
-  }
-  @media (max-width: 1200px) {
-    padding-top: 0;
-    height: 80px;
-    padding-inline: 100px;
-  }
-  @media (max-width: 900px) {
-    padding-top: 0;
-    padding-inline: 50px;
-    height: 80px;
-  }
-  @media (max-width: 600px) {
-    padding-top: 0;
-    padding-inline: 32px;
-    height: 80px;
-  }
+  @media (max-width: 768px) {
+     .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding-bottom: 16px;
+  }}
+  
+
   .sidebar-toggle-btn {
-    opacity: 0;
+    background: none;
     border: none;
     cursor: pointer;
+    opacity: 0;
+
     @media (max-width: 1200px) {
-      opacity: 100%;
+      opacity: 1;
     }
   }
+
+
+  &.placeholder {
+    justify-content: space-between;
+    .sidebar-toggle-placeholder {
+      width: 29px;
+      height: 29px;
+    }
+  }
+}
+
+.page-title-mobile {
+  display: none;
+  padding-inline: clamp(32px, 5vw, 200px);
+  margin-bottom: 16px;
+
   @media (max-width: 768px) {
-    top: 0;
-    right: 0;
+    display: block;
   }
-}
-.sidebar-toggle-placeholder {
-  width: 29px;
-  height: 29px;
-}
 
-@media (max-width: 1200px) {
-  .page-name {
-    padding-left: 100px;
-  }
-}
-
-@media (max-width: 900px) {
-  .page-name {
-    padding-left: 50px;
-    padding-bottom: 0;
-  }
-}
-@media (max-width: 600px) {
-  .page-name {
-    padding-left: 32px;
-  }
 }

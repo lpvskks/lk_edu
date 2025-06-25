@@ -50,6 +50,7 @@ export class SidebarComponent {
       icon: '/icons/menu/Map.svg',
       alt: 'events',
       label: 'SIDEBAR.EVENTS',
+      route: '/'
     },
   ];
 

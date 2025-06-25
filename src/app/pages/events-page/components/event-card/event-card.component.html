@@ -1,0 +1,34 @@
+<div class="event-card">
+<img
+  *ngIf="event.picture?.id"
+  [src]="pictureUrl"
+  [alt]="event.title"
+  class="event-image"
+/>
+
+  <div class="event-details">
+    <h2 class="event-title">
+  <a [routerLink]="['/events', event.id]">{{ event.title }}</a>
+</h2>
+
+     <button
+      *ngIf="isFinished"
+      class="finished-btn">
+      <h4>Завершилось </h4>
+    </button>
+
+    <div class="field">
+      <div class="label">Дата(ы) проведения</div>
+      <div class="value">
+        <p>{{ event.dateTimeFrom | date:'dd.MM.yyyy' }}
+        ({{ event.dateTimeFrom | date:'HH:mm' }}
+        – {{ event.dateTimeTo | date:'HH:mm' }}) </p>
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="label">Формат мероприятия</div>
+      <div class="value">{{ formatLabel  }}</div>
+    </div>
+  </div>
+</div>

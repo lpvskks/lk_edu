@@ -1,0 +1,140 @@
+ .search-container {
+  padding-inline: 32px;
+  padding-block: 28px;
+  width: 1400px;
+  background-color: white;
+}
+mat-form-field,
+mat-form-field * {
+  font-family: "Raleway", sans-serif;
+  font-size: 15.6px;
+}
+
+::ng-deep .mat-mdc-form-field {
+  --mdc-outlined-text-field-container-shape: 8px;
+  --mdc-outlined-text-field-outline-color: #3a3a3a50;
+  --mdc-outlined-text-field-outline-color-hover: #3a3a3a50;
+}
+
+mat-form-field.events-name-input {
+  width: 1150px;
+  margin-right: 8px;
+}
+
+mat-form-field.events-date-input {
+  width: 500px;
+}
+
+.search-btn {
+  width: 236px;
+  height: 48px;
+  background-color: #375fff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.4s, opacity 0.4s;
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &:active {
+    opacity: 0.75;
+  }
+}
+
+h3 {
+  margin-bottom: 8px;
+}
+
+.date-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.date-picker-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.calendar-overlay {
+  position: absolute;
+  top: 70%;
+  left: 85%;
+  width: 100%;
+  max-width: 290px;
+  z-index: 1;
+}
+
+@media (max-width: 1536px) {
+  .search-container {
+    width: 1232px;
+  }
+  mat-form-field.events-name-input {
+    width: 924px;
+  }
+  mat-form-field.events-date-input {
+    width: 383px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .search-container {
+    width: 1000px;
+  }
+  mat-form-field.events-name-input {
+    width: 692px;
+  }
+  mat-form-field.events-date-input {
+    width: 383px;
+  }
+}
+
+@media (max-width: 900px) {
+  .search-container {
+    width: 800px;
+  }
+  mat-form-field.events-name-input {
+    width: 492px;
+  }
+  mat-form-field.events-date-input {
+    width: 383px;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-container {
+    width: 536px;
+  }
+  mat-form-field.events-name-input {
+    width: 244px;
+  }
+  mat-form-field.events-date-input {
+    width: 488px;
+  }
+}
+
+@media (max-width: 375px) {
+  .search-container {
+    width: 343px;
+    height: 236px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .events-search-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  mat-form-field.events-name-input,
+  mat-form-field.events-date-input,
+  .search-btn {
+    width: 295px;
+  }
+} 

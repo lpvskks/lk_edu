@@ -19,7 +19,8 @@
   "PAGE_TITLES": {
     "PROFILE": "Profile",
     "USEFUL_SERVICES":"Useful Services",
-    "CERTIFICATES": "Certificates"
+    "CERTIFICATES": "Certificates",
+    "EVENTS": "Events"
   },
 
   "PROFILE": {
