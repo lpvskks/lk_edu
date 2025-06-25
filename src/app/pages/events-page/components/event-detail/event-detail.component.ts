@@ -88,9 +88,12 @@ onOuterRegister(data: RegistrationData) {
   closeModal() {
     this.showLoginModal = false;
   }
-  get pictureUrl(): string {
-    return `${API_URL}/Files/${this.event.picture.id}`;
-  }
+get pictureUrl(): string {
+  const picId = this.event.picture?.id;
+  return picId
+    ? this.service.getPictureUrl(picId)
+    : '';
+}
 
   get formatLabel(): string {
     switch (this.event.format) {

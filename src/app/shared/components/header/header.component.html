@@ -1,26 +1,25 @@
-<header>
-  <ng-container *ngIf="!isLoginPage; else placeholder">
-    <button
+<header class="app-header" *ngIf="!isLoginPage; else placeholder">
+  <button
     *ngIf="isMobile"
-      class="sidebar-toggle-btn"
-      (click)="onToggleClick()"
-      aria-label="Открыть меню"
-    >
-      <img src="/icons/menu/Hamburger.svg" alt="Открыть меню" />
-    </button>
-    <h1 *ngIf="!isMobile" class="page-title">
-      {{ currentPageTitle | translate }}
-    </h1>
-  </ng-container>
-
-  <!-- Плейсхолдер, чтобы flex не сдвигался -->
-  <ng-template #placeholder>
-    <div class="sidebar-toggle-placeholder"></div>
-  </ng-template>
+    class="sidebar-toggle-btn"
+    (click)="onToggleClick()"
+    aria-label="Открыть меню"
+  >
+    <img src="/icons/menu/Hamburger.svg" alt="Открыть меню" />
+  </button>
+  <h1 *ngIf="!isMobile" class="page-title">
+    {{ currentPageTitle | translate }}
+  </h1>
   <app-language-switcher></app-language-switcher>
 </header>
+
+<ng-template #placeholder>
+  <header class="app-header placeholder">
+    <div class="sidebar-toggle-placeholder"></div>
+    <app-language-switcher></app-language-switcher>
+  </header>
+</ng-template>
+
 <div *ngIf="!isLoginPage && isMobile" class="page-title-mobile">
-  <div class="page-name">
-    <h1> {{ currentPageTitle | translate }}</h1>
-  </div>
+  <h1>{{ currentPageTitle | translate }}</h1>
 </div>

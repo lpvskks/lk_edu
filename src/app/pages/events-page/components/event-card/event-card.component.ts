@@ -18,9 +18,12 @@ export class EventCardComponent {
 
   private eventsService = inject(EventsService);
 
-  get pictureUrl(): string {
-    return this.eventsService.getPictureUrl(this.event.picture.id);
-  }
+ get pictureUrl(): string {
+  const picId = this.event.picture?.id;
+  return picId
+    ? this.eventsService.getPictureUrl(picId)
+    : '';
+}
 
     get isFinished(): boolean {
     return new Date(this.event.dateTimeTo) < new Date();

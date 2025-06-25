@@ -37,7 +37,10 @@
     <div class="description-section">
       <h4 class="section-label">Описание</h4>
       <p class="section-value">{{ event.description }}</p>
-      <img class="event-image-md" [src]="pictureUrl" [alt]="event.title" />
+      <img   *ngIf="event.picture?.id"
+       class="event-image-md"
+        [src]="pictureUrl"
+         [alt]="event.title" />
     </div>
 
     <div class="section-content">
