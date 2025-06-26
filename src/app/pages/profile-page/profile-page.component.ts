@@ -3,18 +3,27 @@ import {
   FileDto,
   ProfileService,
 } from '../../core/services/profile/profile.service';
-import { Profile } from '../../shared/types/profile/profile';
+import { Contact, Profile } from '../../shared/types/profile/profile';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from '../../shared/components/layout/layout.component';
 import { SafeUrl } from '@angular/platform-browser';
-import { finalize, map, Observable, shareReplay, switchMap } from 'rxjs';
+import {
+  catchError,
+  finalize,
+  map,
+  Observable,
+  of,
+  shareReplay,
+  switchMap,
+} from 'rxjs';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import {
   ExperienceEntry,
   ExperienceType,
   WorkRecord,
 } from '../../shared/types/profile/work-info';
-import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-crumb.component";
+import { BreadCrumbComponent } from '../../shared/components/bread-crumb/bread-crumb.component';
+import { NotificationService } from '../../core/services/popup/notification.service';
 
 @Component({
   selector: 'app-profile-page',
@@ -26,6 +35,7 @@ export class ProfilePageComponent {
   private layout = inject(LayoutComponent);
   private profileService = inject(ProfileService);
   private translate = inject(TranslateService);
+  private notify = inject(NotificationService);
 
   selectedSection: 'edu' | 'work' = 'edu';
 
@@ -36,14 +46,21 @@ export class ProfilePageComponent {
   readonly educationRecord$ = this.profileService.getUserEducation();
   readonly workRecord$ = this.profileService.getUserWork();
 
-  readonly profile$: Observable<Profile> = this.profileService.getProfile();
+  profile$ = this.profileService.getProfile().pipe(
+    catchError((err) => {
+      this.notify.notify('error', 'Не удалось загрузить данные профиля');
+      return of(null as any);
+    })
+  );
 
   previewUrl: SafeUrl | null = null;
   readonly avatarUrl$: Observable<SafeUrl> = this.profileService.avatarUrl$;
 
   readonly phones$: Observable<string[]> = this.profile$.pipe(
-    map((p) =>
-      p.contacts.filter((c) => c.type === 'Phone').map((c) => c.value)
+    map((p: Profile) =>
+      p.contacts
+        .filter((c: Contact) => c.type === 'Phone')
+        .map((c: Contact) => c.value)
     ),
     shareReplay(1)
   );
@@ -58,7 +75,10 @@ export class ProfilePageComponent {
 
   readonly additionalEmail$: Observable<string | undefined> =
     this.profile$.pipe(
-      map((p) => p.contacts.find((c) => c.type === 'Email')?.value)
+      map(
+        (p: Profile) =>
+          p.contacts.find((c: Contact) => c.type === 'Email')?.value
+      )
     );
 
   getExperience(
@@ -67,10 +87,12 @@ export class ProfilePageComponent {
   ): ExperienceEntry | undefined {
     return entry.experience.find((e) => e.type === type);
   }
+
   isUploading = false;
   onClickPhotoInput(inputElem: HTMLInputElement): void {
     inputElem.click();
   }
+
   onFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (!input.files?.length) return;
@@ -86,17 +108,29 @@ export class ProfilePageComponent {
     this.profileService
       .uploadFile(file)
       .pipe(
-        switchMap((dto: FileDto) => this.profileService.updateAvatar(dto.id)),
+        switchMap((dto: FileDto) =>
+          this.profileService.updateAvatar(dto.id).pipe(
+            map(() => dto.id),
+            catchError((err) => {
+              this.notify.notify('error', 'Не удалось обновить аватар');
+              return of<string | null>(null);
+            })
+          )
+        ),
         finalize(() => {
           this.isUploading = false;
           this.previewUrl = null;
         })
       )
       .subscribe({
-        next: () => {
+        next: (id: string | null) => {
+          if (id) {
+            this.notify.notify('success', 'Аватар успешно обновлён');
+          }
         },
         error: (err) => {
-          console.error('Ошибка при загрузке/обновлении аватара:', err);
+          console.error(err);
+          this.notify.notify('error', 'Ошибка загрузки файла');
         },
       });
   }

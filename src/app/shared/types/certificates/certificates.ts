@@ -11,11 +11,13 @@ export interface FileDto {
   size: number;
 }
 
+export type CertificateStatus = 'Created' | 'InProcess' | 'Finished';
+
 export interface CertificateRecord {
   id: string;
 
-  status: string;
-  statusEnumDto: EnumDto<'Finished' | 'Pending' | string>;
+  status: CertificateStatus;
+  statusEnumDto: EnumDto<CertificateStatus> | null;
 
   type: string | null;
   typeEnumDto: EnumDto<string> | null;

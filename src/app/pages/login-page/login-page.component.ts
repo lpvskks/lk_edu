@@ -10,6 +10,7 @@ import { HeaderComponent } from "../../shared/components/header/header.component
 import { AuthService } from '../../core/services/auth/auth.service';
 import { PopupComponent } from "../../shared/components/popup/popup.component";
 import { CommonModule } from '@angular/common';
+import { NotificationService } from '../../core/services/popup/notification.service';
 
 @Component({
   selector: 'app-login-page',
@@ -21,7 +22,6 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     TranslateModule,
     HeaderComponent,
-    PopupComponent,
     CommonModule
 ],
   templateUrl: './login-page.component.html',
@@ -32,16 +32,9 @@ export class LoginPageComponent {
   private fb = inject(FormBuilder);
   private translate = inject(TranslateService);
   router = inject(Router);
-  popupVisible = true;
+  private notifyService  = inject(NotificationService); 
+
   isLoading = false;
-
-  showInfoPopup() {
-    this.popupVisible = true;
-  }
-
-  onPopupClose() {
-    this.popupVisible = false;
-  }
 
   ngOnInit() {
     this.translate.setDefaultLang('ru');
@@ -54,22 +47,27 @@ export class LoginPageComponent {
   });
   
   onSubmit() {
+     if (this.form.invalid) {
+      this.notifyService.notify('warning', 'Пожалуйста, заполните все обязательные поля');
+      return;
+    }
+
     if (this.form.valid) {
       this.isLoading = true;
       this.authService.login(this.form.value as AuthUser).pipe(take(1)).
       subscribe({ 
         next: (response) => {
+          this.isLoading = false;
           if (response.loginSucceeded) {
-            console.log('Токен:', response.accessToken);
-            this.router.navigate(['']);
+              this.notifyService.notify('success', 'Вы успешно вошли в систему');
+          setTimeout(() => this.router.navigate(['']), 500);
           } else {
-            this.isLoading = false;
-            alert('Неверный логин или пароль');
+              this.notifyService.notify('error', 'Неверный логин или пароль');
           }
         },
         error: (error) => {
-          console.error('Ошибка авторизации:', error),
-          this.isLoading = false;
+           this.isLoading = false;
+        this.notifyService.notify('error', 'Ошибка соединения. Попробуйте ещё раз');
         }
       });
     }

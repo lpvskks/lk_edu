@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ToastContainerComponent } from "./shared/components/toast-container/toast-container.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet
+    RouterOutlet,
+    ToastContainerComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

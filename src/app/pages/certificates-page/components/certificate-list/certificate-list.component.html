@@ -25,7 +25,11 @@
       </div>
 
       <div class="certificate-action">
-        <ng-container *ngIf="cert.status === 'Finished' && cert.receiveType === 'Electronic'">
+        <ng-container
+          *ngIf="
+            cert.status === 'Finished' && cert.receiveType === 'Electronic'
+          "
+        >
           <div class="extra-buttons">
             <button
               class="extra-button signature-button"

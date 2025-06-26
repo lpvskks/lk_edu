@@ -9,6 +9,7 @@ import {
 import { API_URL } from '../../../../core/constants/api-url';
 import { AuthService } from '../../../../core/services/auth/auth.service';
 import { RegisterModalComponent } from '../register-modal/register-modal.component';
+import { NotificationService } from '../../../../core/services/popup/notification.service';
 
 @Component({
   selector: 'app-event-detail',
@@ -20,6 +21,7 @@ export class EventDetailComponent {
   private route = inject(ActivatedRoute);
   private service = inject(EventsService);
   public authService = inject(AuthService);
+  private notify = inject(NotificationService);
 
   event!: EventDetailDto;
   mapUrl = '';
@@ -58,11 +60,11 @@ onOuterRegister(data: RegistrationData) {
   this.service.registerExternal(this.event.id, data)
     .subscribe({
       next: () => {
-        console.log('Внешняя регистрация: ответ 200 OK');
+         this.notify.notify('success', 'Вы успешно зарегистрированы на мероприятие');
         this.showLoginModal = false;
       },
       error: err => {
-        console.error('Внешняя регистрация: ошибка', err);
+       this.notify.notify('error', 'Не удалось зарегистрироваться на мероприятие');
       }
     });
 }
@@ -78,9 +80,10 @@ onOuterRegister(data: RegistrationData) {
     this.service.registerInner(this.event.id).subscribe({
       next: () => {
         this.isParticipant = true;
+        this.notify.notify('success', 'Вы зарегистрированы на мероприятие');
       },
       error: (err) => {
-        console.error('Не удалось зарегистрироваться:', err);
+       this.notify.notify('error', 'Не удалось зарегистрироваться на мероприятие');
       },
     });
   }

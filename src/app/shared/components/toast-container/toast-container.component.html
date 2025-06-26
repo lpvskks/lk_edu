@@ -1,0 +1,8 @@
+  <div class="popup-container">
+      <app-popup
+        *ngFor="let n of notifications"
+        [type]="n.type"
+        [message]="n.message"
+        (close)="remove(n.id)"
+      ></app-popup>
+    </div>

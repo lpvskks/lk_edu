@@ -13,7 +13,7 @@ import {
   OrderInfo,
 } from '../../shared/types/certificates/certificates';
 import { Observable, of } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import {
   RoleSelectorComponent,
   RoleType,
@@ -28,6 +28,7 @@ import {
   CERTIFICATE_KINDS,
 } from '../../core/constants/certificate-types';
 import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-crumb.component";
+import { NotificationService } from '../../core/services/popup/notification.service';
 
 @Component({
   selector: 'app-certificates-page',
@@ -48,7 +49,7 @@ export class CertificatesPageComponent implements OnInit {
   private profileService = inject(ProfileService);
   private certService = inject(CertificatesService);
   private fileDownloadService = inject(FileDownloadServiceService);
-
+   private notify = inject(NotificationService);
   hasBothRoles: boolean = false;
 
   selectedRole: RoleType = 'student';
@@ -124,18 +125,13 @@ export class CertificatesPageComponent implements OnInit {
                 ownerId
               )
             : of([])
-        )
-      )
-      .subscribe({
-        next: (fetchedList) => {
-          this.certificatesList = fetchedList;
-        },
-        error: (err) => {
-          console.error('Ошибка при получении списка справок:', err);
-        },
-      });
+        ), catchError(err => {
+        console.error('Ошибка при получении списка справок:', err);
+        this.notify.notify('error', 'Не удалось загрузить список справок');
+        return of([]);
+      })
+    ).subscribe(list => this.certificatesList = list);
   }
-
   onOrder({ type, receiveType }: OrderInfo): void {
     const baseDto: CertificateCreateDto = {
       type: null,
@@ -184,18 +180,20 @@ export class CertificatesPageComponent implements OnInit {
   private sendCreateRequest(dto: CertificateCreateDto): void {
     this.certService.createCertificate(dto).subscribe({
       next: (created) => {
+        this.notify.notify('success', 'Справка успешно создана');
         this.certificatesList = [...this.certificatesList, created];
         this.loadCertificates();
       },
-      error: (err) => {
+      error: err => {
         console.error('Ошибка при создании справки:', err);
-      },
+        this.notify.notify('error', 'Не удалось создать справку');
+      }
     });
   }
 
   onDownloadSignature(cert: CertificateRecord): void {
     if (!cert.signatureFile) {
-      console.warn('Нет signatureFile для данной справки');
+       this.notify.notify('warning', 'Подпись недоступна');
       return;
     }
     const { id, name, extension } = cert.signatureFile;
@@ -204,7 +202,7 @@ export class CertificatesPageComponent implements OnInit {
 
   onDownloadCertificate(cert: CertificateRecord): void {
     if (!cert.certificateFile) {
-      console.warn('Нет certificateFile для данной справки');
+      this.notify.notify('warning', 'Файл справки недоступен');
       return;
     }
     const { id, name, extension } = cert.certificateFile;

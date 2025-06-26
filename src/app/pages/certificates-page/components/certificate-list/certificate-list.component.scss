@@ -60,13 +60,22 @@
       padding: 0;
 
       &.created {
-        background-color: #f9f9f9;
+        background-color: #9c9c9c;
+        .status-text {
+          color: #f9f9f9;
+        }
       }
       &.in-process {
         background-color: #f69d1e;
+        .status-text {
+          color: #ffffff;
+        }
       }
       &.finished {
         background-color: #46b34a;
+        .status-text {
+          color: #ffffff;
+        }
       }
       &:hover {
         opacity: 0.85;

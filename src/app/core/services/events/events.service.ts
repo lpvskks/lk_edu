@@ -35,16 +35,9 @@ export class EventsService {
     if (filter?.name) {
       params = params.set('name', filter.name.trim());
     }
-
     if (filter?.date) {
-      const d = filter.date;
-      const dd = String(d.getDate()).padStart(2, '0');
-      const mm = String(d.getMonth() + 1).padStart(2, '0');
-      const yyyy = d.getFullYear();
-      const dateStr = `${dd}.${mm}.${yyyy}`;
-      params = params.set('eventDate', dateStr);
+      params = params.set('eventDate', filter.date.toISOString());
     }
-
     const cacheKey = [
       path,
       page,

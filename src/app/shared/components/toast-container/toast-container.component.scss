@@ -1,0 +1,25 @@
+.popup-container {
+  position: fixed !important;
+  inset: 24px 24px auto auto !important; /* top/right = 24px, left/bottom = auto */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  pointer-events: none;
+  z-index: 1000;
+}
+.popup-container app-popup { pointer-events: auto; }
+
+@media (max-width: 768px) {
+  .popup-container {
+    inset: 16px !important;      /* по 16px со всех сторон */
+    align-items: center;          /* центрировать по горизонтали */
+  }
+  .popup-container app-popup {
+    width: calc(100% - 32px) !important;
+  }
+}
+@media (min-width: 1920px) {
+  .popup-container {
+    inset: 32px 32px auto auto !important; /* чуть больше отступы на очень широких мониторах */
+  }
+}
