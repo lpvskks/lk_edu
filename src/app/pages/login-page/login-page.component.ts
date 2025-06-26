@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HeaderComponent } from "../../shared/components/header/header.component";
 import { AuthService } from '../../core/services/auth/auth.service';
+import { PopupComponent } from "../../shared/components/popup/popup.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-page',
@@ -18,7 +20,9 @@ import { AuthService } from '../../core/services/auth/auth.service';
     MatInputModule,
     ReactiveFormsModule,
     TranslateModule,
-    HeaderComponent
+    HeaderComponent,
+    PopupComponent,
+    CommonModule
 ],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss'
@@ -28,8 +32,16 @@ export class LoginPageComponent {
   private fb = inject(FormBuilder);
   private translate = inject(TranslateService);
   router = inject(Router);
-
+  popupVisible = true;
   isLoading = false;
+
+  showInfoPopup() {
+    this.popupVisible = true;
+  }
+
+  onPopupClose() {
+    this.popupVisible = false;
+  }
 
   ngOnInit() {
     this.translate.setDefaultLang('ru');

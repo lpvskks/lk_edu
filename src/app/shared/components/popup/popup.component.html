@@ -1,0 +1,15 @@
+<div class="popup" [ngClass]="'popup--' + type">
+  <div class="popup__header">
+    <div class="popup__group">
+      <img src="icons/popup/{{ type }}-l.svg" alt="" class="popup__icon">
+      <p class="popup__title">{{ title }}</p>
+    </div>
+   <img
+      src="icons/popup/{{ type }}-close.svg"
+      alt="Закрыть"
+      class="popup__close"
+      (click)="onCloseClick()"
+    />
+  </div>
+  <div class="popup__body">{{ message }}</div>
+</div>
