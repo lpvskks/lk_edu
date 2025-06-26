@@ -1,0 +1,64 @@
+<div class="page-container" *ngIf="profile$ | async as profile">
+  <div class="name">
+    <h2>
+      {{ profile.lastName }} {{ profile.firstName }}
+      {{ profile.patronymic }}
+    </h2>
+  </div>
+  <div class="columns">
+    <div class="column-left">
+      <img
+        [src]="getPictureUrl(profile.avatar.id)"
+        alt="Фото профиля"
+        class="profile-photo"
+      />
+    </div>
+
+    <div class="column-right">
+      <div class="personal-data">
+        <h3 class="info-section__title">Данные физического лица</h3>
+
+        <ng-container *ngIf="profile$ | async as profile">
+          <div class="info-block">
+            <p class="info-label">{{ "Пол" }}</p>
+            <p class="info-value">
+              {{ profile.gender === "Female" ? "Женский" : profile.gender }}
+            </p>
+          </div>
+
+          <div class="info-block">
+            <span class="info-label"> Дата рождения </span>
+            <p class="info-value">
+              {{ profile.birthDate | date : "dd.MM.yyyy" }}
+            </p>
+          </div>
+
+          <div class="info-block info-block--last">
+            <span class="info-label">{{ "Email" }}</span>
+            <p class="info-value">{{ profile.email }}</p>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="contacts">
+        <h3 class="info-section__title">Контакты</h3>
+
+        <div class="info-block">
+          <span class="info-label">{{ "Телефон" }}</span>
+          <p class="info-value">{{ primaryPhone$ | async }}</p>
+        </div>
+
+        <div class="info-block">
+          <span class="info-label">{{ "Телефон 2" }}</span>
+
+          <p class="info-value">{{ secondaryPhone$ | async }}</p>
+        </div>
+
+        <div class="info-block">
+          <span class="info-label">Дополнительный E-mail</span>
+          <p class="info-value">{{ additionalEmail$ | async }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

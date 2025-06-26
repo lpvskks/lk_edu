@@ -1,11 +1,11 @@
 <div class="participant-item">
-  <p class="participant-name">
-    {{ user.lastName }} {{ user.firstName }} {{ user.patronymic }}
-  </p>
+  <div [routerLink]="['/admin/users', user.id]">
+    <p class="participant-name">
+      {{ user.lastName }} {{ user.firstName }} {{ user.patronymic }}
+    </p>
+  </div>
   <p class="participant-detail">
-    Дата рождения: {{ user.birthDate | date:'dd.MM.yyyy' }}
+    Дата рождения: {{ user.birthDate | date : "dd.MM.yyyy" }}
   </p>
-  <p class="participant-detail">
-    Email: {{ user.email }}
-  </p>
+  <p class="participant-detail">Email: {{ user.email }}</p>
 </div>

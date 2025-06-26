@@ -3,12 +3,13 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserListResponse } from '../../../shared/types/administration/user-list';
 import { API_URL } from '../../constants/api-url';
+import { Profile } from '../../../shared/types/profile/profile';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserListService {
-   private http = inject(HttpClient);
+  private http = inject(HttpClient);
 
   getUserList(
     page: number = 1,
@@ -31,6 +32,14 @@ export class UserListService {
       params = params.set('email', email);
     }
 
-    return this.http.get<UserListResponse> (`${API_URL}/User/list`, { params });
+    return this.http.get<UserListResponse>(`${API_URL}/User/list`, { params });
+  }
+
+  getUserProfile(userId: string): Observable<Profile> {
+    return this.http.get<Profile>(`${API_URL}/User/${userId}`);
+  }
+
+  getPictureUrl(pictureId: string): string {
+    return `${API_URL}/Files/${pictureId}`;
   }
 }
