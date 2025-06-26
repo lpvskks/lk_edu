@@ -1,0 +1,13 @@
+<p class="breadcrumb">
+  <ng-container *ngFor="let c of crumbs; let last = last">
+    <a
+      *ngIf="!last"
+      [routerLink]="c.url"
+      class="breadcrumb__link"
+    >
+      {{ c.label }}
+    </a>
+    <span *ngIf="last" class="breadcrumb__current">{{ c.label }}</span>
+    <span *ngIf="!last" class="breadcrumb__sep"> / </span>
+  </ng-container>
+</p>

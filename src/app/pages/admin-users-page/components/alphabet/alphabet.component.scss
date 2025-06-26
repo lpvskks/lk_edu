@@ -1,0 +1,23 @@
+.alphabet {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+
+  .alphabet-ellipsis {
+    padding: 0 8px;
+    font-size: 1rem;
+    color: #3A3A3A;
+    user-select: none;
+  }
+}
+.nav-btn {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  line-height: 20px;
+  text-align: center;
+  color: #3A3A3A;
+}

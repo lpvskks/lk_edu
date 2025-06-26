@@ -12,6 +12,7 @@ import { PaginationComponent } from '../../shared/components/pagination/paginati
 import { PublicEventsResponse } from '../../shared/types/events/events';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { LayoutComponent } from '../../shared/components/layout/layout.component';
+import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-crumb.component";
 
 @Component({
   selector: 'app-events-page',
@@ -21,7 +22,8 @@ import { LayoutComponent } from '../../shared/components/layout/layout.component
     SearchContainerComponent,
     PaginationComponent,
     EventCardComponent,
-  ],
+    BreadCrumbComponent
+],
   templateUrl: './events-page.component.html',
   styleUrls: ['./events-page.component.scss'],
 })

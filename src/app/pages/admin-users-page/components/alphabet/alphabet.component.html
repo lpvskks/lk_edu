@@ -1,0 +1,29 @@
+<div class="alphabet">
+ <button class="nav-btn" (click)="toggle()">&lt;</button>
+
+  <ng-container *ngIf="!expanded; else full">
+    <app-alphabet-item
+      [label]="letters[0]"
+      [selected]="selectedLetter === letters[0]"
+      (select)="onSelect($event)"
+    ></app-alphabet-item>
+    <span class="alphabet-ellipsis">—</span>
+    <app-alphabet-item
+      [label]="letters[letters.length - 1]"
+      [selected]="selectedLetter === letters[letters.length - 1]"
+      (select)="onSelect($event)"
+    ></app-alphabet-item>
+  </ng-container>
+
+  <ng-template #full>
+    <ng-container *ngFor="let l of letters">
+      <app-alphabet-item
+        [label]="l"
+        [selected]="selectedLetter === l"
+        (select)="onSelect($event)"
+      ></app-alphabet-item>
+    </ng-container>
+  </ng-template>
+
+  <button class="nav-btn" (click)="toggle()">&gt;</button>
+</div>

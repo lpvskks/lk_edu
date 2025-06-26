@@ -1,0 +1,36 @@
+.participant-item {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-left: 2px solid transparent;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s, border-left-color 0.2s;
+  color: #3a3a3a;
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover,
+  &:active {
+    background-color: #3a3a3a05;
+    border-left-color: #375fff;
+  }
+
+  .participant-name {
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .participant-detail {
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    letter-spacing: 0;
+    margin: 4px 0 0;
+  }
+}

@@ -1,0 +1,77 @@
+<div class="container">
+  <app-bread-crumb></app-bread-crumb>
+  <div class="search-row">
+    <mat-form-field
+      appearance="outline"
+      floatLabel="always"
+      class="search-input"
+    >
+      <ng-container matPrefix>
+        <img
+          src="icons/administration/search.svg"
+          alt="Search"
+          class="search_icon"
+        />
+      </ng-container>
+      <input
+        #nameInput
+        matInput
+        placeholder="Введите имя"
+        (input)="onNameChange(nameInput.value)"
+      />
+    </mat-form-field>
+    <button class="search_btn">НАЙТИ</button>
+  </div>
+
+  <div class="controls-row">
+    <app-alphabet (letterSelected)="onLastNameFilter($event)"></app-alphabet>
+    <div class="buttons">
+       <img
+        src="icons/administration/Hamburger_MD.svg"
+        alt="List view"
+        class="btn"
+        [class.active]="viewMode === 'list'"
+        (click)="setView('list')"
+      />
+      <img
+        src="icons/administration/More_Grid_Big.svg"
+        alt="Card view"
+        class="btn"
+        [class.active]="viewMode === 'card'"
+        (click)="setView('card')"
+      />
+    </div>
+  </div>
+
+  <ng-container *ngIf="users$ | async as data">
+   <div *ngIf="viewMode === 'list'" class="users-container">
+      <app-participant-item
+        *ngFor="let u of data.results"
+        [user]="u"
+      ></app-participant-item>
+    </div>
+
+     <div *ngIf="viewMode === 'card'" class="cards-container">
+    <div class="cards-grid">
+      <div *ngFor="let u of data.results" class="user-card">
+        <p class="user-card__name">
+          {{ u.lastName }} {{ u.firstName }} {{ u.patronymic }}
+        </p>
+        <p class="user-card__detail">
+          Дата рождения: {{ u.birthDate | date:'dd.MM.yyyy' }}
+        </p>
+        <p class="user-card__detail">
+          Email: {{ u.email }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+    <div class="pagination-container">
+      <app-pagination
+        [metaData]="data.metaData"
+        (pageChange)="onPageChange($event)"
+      ></app-pagination>
+    </div>
+  </ng-container>
+</div>

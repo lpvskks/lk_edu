@@ -8,6 +8,8 @@ import { CertificatesPageComponent } from './pages/certificates-page/certificate
 import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { EventDetailComponent } from './pages/events-page/components/event-detail/event-detail.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { AdminUsersPageComponent } from './pages/admin-users-page/admin-users-page.component';
+import { SpecificUserPageComponent } from './pages/specific-user-page/specific-user-page.component';
 
 export const routes: Routes = [
   {path: '', component: LayoutComponent, children: [
@@ -17,6 +19,8 @@ export const routes: Routes = [
     {path: 'usefulservices', component: UsefulServicesPageComponent},
     {path: 'certificates', component: CertificatesPageComponent},
     {path: 'admin', component: AdminPageComponent},
+    {path: 'admin/users', component: AdminUsersPageComponent},
+    {path: 'admin/users/:id', component: SpecificUserPageComponent},
   ]},
   {path: 'login', component: LoginPageComponent},
  // {path: '',  canActivate: [canActivateAuth]}
