@@ -1,47 +1,43 @@
 import {
   HttpHandlerFn,
   HttpInterceptorFn,
-  HttpRequest,
-  HttpEvent
+  HttpRequest
 } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { catchError, EMPTY, switchMap, throwError, Observable } from 'rxjs';
+import { catchError, switchMap, throwError } from 'rxjs';
 import { AuthService } from '../services/auth/auth.service';
-import { Router } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
 
 let isRefreshing = false;
 
 export const authTokenInterceptor: HttpInterceptorFn = (
   req: HttpRequest<any>,
   next: HttpHandlerFn
-): Observable<HttpEvent<any>> => {
+) => {
   const authService = inject(AuthService);
-  const router = inject(Router);
-  const token = authService.cookieService.get('token');
+  const token = authService.cookieService.get('token'); 
 
   if (!token) {
-    return next(req).pipe(handle404(router));
+    return next(req);
   }
 
   const authReq = addToken(req, token);
 
   return next(authReq).pipe(
-    catchError((error: HttpErrorResponse) => {
-      if (error.status === 401 && !isRefreshing) {
-        return refreshAndProceed(authService, req, next, router);
+    catchError((error) => {
+      if ((error.status === 403 || error.status === 401) && !isRefreshing) {
+        return refreshAndProceed(authService, req, next);
       }
-      return handleError(error, router);
+
+      return throwError(() => error);
     })
   );
 };
 
-function refreshAndProceed(
+const refreshAndProceed = (
   authService: AuthService,
   req: HttpRequest<any>,
-  next: HttpHandlerFn,
-  router: Router
-): Observable<HttpEvent<any>> {
+  next: HttpHandlerFn
+) => {
   isRefreshing = true;
 
   return authService.refreshAuthToken().pipe(
@@ -49,37 +45,20 @@ function refreshAndProceed(
       authService.saveTokens(res);
       const newReq = addToken(req, res.accessToken);
       isRefreshing = false;
-      return next(newReq).pipe(handle404(router));
+      return next(newReq);
     }),
-    catchError((err: HttpErrorResponse) => {
+    catchError(err => {
       isRefreshing = false;
       authService.logout();
-      return handleError(err, router);
+      return throwError(() => err);
     })
   );
-}
+};
 
-function addToken(req: HttpRequest<any>, token: string): HttpRequest<any> {
+const addToken = (req: HttpRequest<any>, token: string) => {
   return req.clone({
     setHeaders: {
       Authorization: `Bearer ${token}`
     }
   });
-}
-
-function handleError(
-  err: HttpErrorResponse,
-  router: Router
-): Observable<HttpEvent<any>> {
-  if (err.status === 400 || err.status === 404) {
-    router.navigate(['/notFound']);
-    return EMPTY; 
-  }
-  return throwError(() => err);
-}
-
-function handle404(
-  router: Router
-): import('rxjs').OperatorFunction<HttpEvent<any>, HttpEvent<any>> {
-  return catchError((err: HttpErrorResponse) => handleError(err, router));
-}
+};

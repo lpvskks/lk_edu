@@ -1,9 +1,12 @@
 .page-container {
   display: flex;
   flex-direction: column;
-  padding-top: 69px;
-  padding-left: 82px;
   height: calc(100vh - 145px);
+   margin: 24px 0 0 100px;
+}
+
+.path {
+  margin-bottom: 28px;
 }
 
 .services-list {

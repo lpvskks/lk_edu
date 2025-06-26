@@ -3,8 +3,11 @@
 }
 
 .profile-page {
-  padding-top: clamp(32px, 5vw, 82px);
-  padding-inline: clamp(32px, 5vw, 82px);
+  padding-top: clamp(32px, 5vw, 20px);
+  padding-inline: clamp(32px, 5vw, 86px);
+}
+.path {
+  margin-bottom: 28px;
 }
 
 .profile-container {
