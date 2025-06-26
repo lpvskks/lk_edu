@@ -14,10 +14,11 @@ import {
   ExperienceType,
   WorkRecord,
 } from '../../shared/types/profile/work-info';
+import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-crumb.component";
 
 @Component({
   selector: 'app-profile-page',
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, BreadCrumbComponent],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss',
 })

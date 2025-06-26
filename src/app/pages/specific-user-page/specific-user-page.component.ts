@@ -7,10 +7,14 @@ import { Profile } from '../../shared/types/profile/profile';
 import { Observable, map, switchMap, shareReplay } from 'rxjs';
 import { API_URL } from '../../core/constants/api-url';
 import { CommonModule } from '@angular/common';
+import { BreadCrumbComponent } from '../../shared/components/bread-crumb/bread-crumb.component';
 
 @Component({
   selector: 'app-specific-user-page',
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    BreadCrumbComponent
+  ],
   templateUrl: './specific-user-page.component.html',
   styleUrl: './specific-user-page.component.scss',
 })

@@ -1,4 +1,5 @@
 <div class="events-container">
+  <app-bread-crumb></app-bread-crumb>
   <app-search-container (search)="onSearch($event)"> </app-search-container>
 
   <ng-container *ngIf="events$ | async as data">

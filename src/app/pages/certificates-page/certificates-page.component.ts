@@ -27,6 +27,7 @@ import {
   TYPES_FOR_WORK,
   CERTIFICATE_KINDS,
 } from '../../core/constants/certificate-types';
+import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-crumb.component";
 
 @Component({
   selector: 'app-certificates-page',
@@ -37,7 +38,8 @@ import {
     InfoSectionsComponent,
     OrderCertificatesComponent,
     CertificateListComponent,
-  ],
+    BreadCrumbComponent
+],
   templateUrl: './certificates-page.component.html',
   styleUrls: ['./certificates-page.component.scss'],
 })

@@ -1,3 +1,9 @@
+<app-bread-crumb [dynamicLabel]="
+  (profile$ | async)?.lastName + ' ' +
+  (profile$ | async)?.firstName + ' ' +
+  (profile$ | async)?.patronymic
+"></app-bread-crumb>
+
 <div class="page-container" *ngIf="profile$ | async as profile">
   <div class="name">
     <h2>

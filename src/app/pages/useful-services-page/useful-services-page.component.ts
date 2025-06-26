@@ -10,6 +10,7 @@ import { UserType } from '../../shared/types/profile/profile';
 import { PagedResourcesResponse } from '../../shared/types/useful-services.ts/useful-services';
 import { PaginationComponent } from '../../shared/components/pagination/pagination.component';
 import { UsefulServicesCardComponent } from './components/useful-services-card/useful-services-card.component';
+import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-crumb.component";
 
 @Component({
   selector: 'app-useful-services-page',
@@ -18,8 +19,9 @@ import { UsefulServicesCardComponent } from './components/useful-services-card/u
     CommonModule,
     TranslateModule,
     PaginationComponent,
-    UsefulServicesCardComponent
-  ],
+    UsefulServicesCardComponent,
+    BreadCrumbComponent
+],
   templateUrl: './useful-services-page.component.html',
   styleUrls: ['./useful-services-page.component.scss']
 })

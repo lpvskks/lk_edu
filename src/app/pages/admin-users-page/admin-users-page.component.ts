@@ -9,17 +9,19 @@ import { UserListService } from '../../core/services/administration/user-list.se
 import { BehaviorSubject, Observable, switchMap, tap, shareReplay } from 'rxjs';
 import { UserListResponse } from '../../shared/types/administration/user-list';
 import { ParticipantItemComponent } from './components/participant-item/participant-item.component';
+import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-crumb.component";
 
 @Component({
   selector: 'app-admin-users-page',
   imports: [
     ReactiveFormsModule,
-     MatInputModule,
-      CommonModule, 
-      AlphabetComponent,
-      PaginationComponent,
-      ParticipantItemComponent
-    ],
+    MatInputModule,
+    CommonModule,
+    AlphabetComponent,
+    PaginationComponent,
+    ParticipantItemComponent,
+    BreadCrumbComponent
+],
   templateUrl: './admin-users-page.component.html',
   styleUrl: './admin-users-page.component.scss'
 })
