@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CalendarComponentComponent } from '../calendar-component/calendar-component.component';
 import { CommonModule } from '@angular/common';
 import { EventCardComponent } from '../event-card/event-card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface EventsFilter {
   name: string;
@@ -14,6 +15,7 @@ export interface EventsFilter {
   selector: 'app-search-container',
   standalone: true,
   imports: [
+    TranslateModule,
     ReactiveFormsModule,
     MatInputModule,
     CalendarComponentComponent,

@@ -4,10 +4,11 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { RegistrationData } from '../../../../shared/types/events/event-details';
 import { NotificationService } from '../../../../core/services/popup/notification.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-modal',
-  imports: [ReactiveFormsModule, MatInputModule, CommonModule],
+  imports: [ReactiveFormsModule, MatInputModule, CommonModule, TranslateModule],
   templateUrl: './register-modal.component.html',
   styleUrl: './register-modal.component.scss',
 })

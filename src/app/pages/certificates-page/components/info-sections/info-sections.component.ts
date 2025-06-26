@@ -3,6 +3,7 @@ import { EducationEntry } from '../../../../shared/types/profile/education';
 import { RoleType } from '../role-selector/role-selector.component';
 import { CommonModule } from '@angular/common';
 import { PostEntry } from '../../../../shared/types/profile/work-info';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface TabItem {
   id: string;
@@ -12,7 +13,7 @@ export interface TabItem {
 
 @Component({
   selector: 'app-info-sections',
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './info-sections.component.html',
   styleUrl: './info-sections.component.scss',
 })

@@ -13,6 +13,7 @@ import { PublicEventsResponse } from '../../shared/types/events/events';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { LayoutComponent } from '../../shared/components/layout/layout.component';
 import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-crumb.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-events-page',
@@ -22,7 +23,8 @@ import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-c
     SearchContainerComponent,
     PaginationComponent,
     EventCardComponent,
-    BreadCrumbComponent
+    BreadCrumbComponent,
+    TranslateModule
 ],
   templateUrl: './events-page.component.html',
   styleUrls: ['./events-page.component.scss'],

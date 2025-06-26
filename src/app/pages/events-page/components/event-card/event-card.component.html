@@ -14,11 +14,11 @@
      <button
       *ngIf="isFinished"
       class="finished-btn">
-      <h4>Завершилось </h4>
+      <h4>{{ 'EVENTS-PAGE.CARD.FINISHED' | translate }} </h4>
     </button>
 
     <div class="field">
-      <div class="label">Дата(ы) проведения</div>
+      <div class="label">{{ 'EVENTS-PAGE.CARD.DATES' | translate }}</div>
       <div class="value">
         <p>{{ event.dateTimeFrom | date:'dd.MM.yyyy' }}
         ({{ event.dateTimeFrom | date:'HH:mm' }}
@@ -27,7 +27,7 @@
     </div>
 
     <div class="field">
-      <div class="label">Формат мероприятия</div>
+      <div class="label">{{ 'EVENTS-PAGE.CARD.FORMAT' | translate }}</div>
       <div class="value">{{ formatLabel  }}</div>
     </div>
   </div>

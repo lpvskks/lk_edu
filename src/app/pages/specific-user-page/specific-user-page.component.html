@@ -22,7 +22,7 @@
 
     <div class="column-right">
       <div class="personal-data">
-        <h3 class="info-section__title">Данные физического лица</h3>
+        <h3 class="info-section__title"> {{ 'PROFILE-PAGE.SECTION_TITLES.PERSONAL_DATA' | translate }}</h3>
 
         <ng-container *ngIf="profile$ | async as profile">
           <div class="info-block">
@@ -33,35 +33,35 @@
           </div>
 
           <div class="info-block">
-            <span class="info-label"> Дата рождения </span>
+            <span class="info-label">{{ 'PROFILE-PAGE.LABELS.BIRTH_DATE' | translate }} </span>
             <p class="info-value">
               {{ profile.birthDate | date : "dd.MM.yyyy" }}
             </p>
           </div>
 
           <div class="info-block info-block--last">
-            <span class="info-label">{{ "Email" }}</span>
+            <span class="info-label">{{ 'PROFILE-PAGE.LABELS.EMAIL' | translate }}</span>
             <p class="info-value">{{ profile.email }}</p>
           </div>
         </ng-container>
       </div>
 
       <div class="contacts">
-        <h3 class="info-section__title">Контакты</h3>
+        <h3 class="info-section__title">{{ 'PROFILE-PAGE.SECTION_TITLES.CONTACTS' | translate }}</h3>
 
         <div class="info-block">
-          <span class="info-label">{{ "Телефон" }}</span>
+          <span class="info-label">{{ 'PROFILE-PAGE.LABELS.PHONE' | translate }}</span>
           <p class="info-value">{{ primaryPhone$ | async }}</p>
         </div>
 
         <div class="info-block">
-          <span class="info-label">{{ "Телефон 2" }}</span>
+          <span class="info-label">{{ 'PROFILE-PAGE.LABELS.PHONE_2' | translate }}</span>
 
           <p class="info-value">{{ secondaryPhone$ | async }}</p>
         </div>
 
         <div class="info-block">
-          <span class="info-label">Дополнительный E-mail</span>
+          <span class="info-label">{{ 'PROFILE-PAGE.LABELS.ADDITIONAL_EMAIL' | translate }}</span>
           <p class="info-value">{{ additionalEmail$ | async }}</p>
         </div>
       </div>

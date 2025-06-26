@@ -64,5 +64,123 @@
   "USEFUL-SERVICES": {
     "TERMS_LABEL": "Условия предоставления",
     "GO_TO_SITE": "Перейти на сайт"
+  },
+  "ADMINISTRATION-PAGE": {
+    "BREADCRUMB": "Администрирование",
+    "CARDS": {
+      "USERS": {
+        "TITLE": "Пользователи",
+        "DESCRIPTION": "Можно просмотреть список пользователей с возможностью фильтрации и поиска по имени или по первой букве фамилии."
+      },
+      "USEFUL_SERVICES": {
+        "TITLE": "Полезные сервисы",
+        "DESCRIPTION": "Можно просмотреть, создать, отредактировать и удалить полезный сервис."
+      },
+      "EVENTS": {
+        "TITLE": "Мероприятия",
+        "DESCRIPTION": "Можно просмотреть, создать, отредактировать и удалить мероприятие, а также найти нужное с помощью поиска и фильтрации."
+      }
+    }
+  },
+  "CERTIFICATES-PAGE": {
+    "BREADCRUMB": "Справки",
+    "TITLE": "Заказ справки",
+    "ROLE_SELECTOR": {
+      "STUDENT": "Студент",
+      "EMPLOYEE": "Сотрудник"
+    },
+    "ORDER_SECTION": {
+      "TITLE": "Заказать справку",
+      "TYPE_LABEL": "Тип справки",
+      "KIND_LABEL": "Вид справки",
+      "BUTTON": "ЗАКАЗАТЬ"
+    },
+    "INFO_LABELS": {
+      "POSITION": "Должность",
+      "RATE": "Ставка",
+      "WORKPLACE": "Место работы",
+      "POST_TYPE": "Тип должности",
+      "EMPLOYMENT_TYPE": "Вид занятости",
+      "EDU_LEVEL": "Уровень образования",
+      "STATUS": "Статус",
+      "FACULTY": "Факультет",
+      "DIRECTION": "Направление",
+      "GROUP": "Группа"
+    },
+    "CERTIFICATE_LIST": {
+      "FROM_DATE": "Справка от",
+      "TYPE": "Тип справки:",
+      "KIND": "Вид справки:"
+    },
+    "ACTIONS": {
+      "SIGNATURE": "Подпись",
+      "DOWNLOAD": "Справку"
+    },
+    "STATUS": {
+      "CREATED": "Создано",
+      "IN_PROCESS": "В работе",
+      "FINISHED": "Готово"
+    }
+  },
+   "PROFILE-PAGE": {
+    "BREADCRUMB": "Профиль",
+    "SECTION_TITLES": {
+      "PERSONAL_DATA": "Данные физического лица",
+      "CONTACTS": "Контакты"
+    },
+    "LABELS": {
+      "GENDER": "Пол",
+      "BIRTH_DATE": "Дата рождения",
+      "EMAIL": "Email",
+      "PHONE": "Телефон",
+      "PHONE_2": "Телефон 2",
+      "ADDITIONAL_EMAIL": "Дополнительный E-mail"
+    },
+    "GENDER_VALUES": {
+      "Female": "Женский",
+      "Male": "Мужской"
+    },
+    "ALT": {
+      "PROFILE_PHOTO": "Фото профиля"
+    }
+   }, 
+   "EVENTS-PAGE": {
+    "BREADCRUMB": "Мероприятия",
+    "SEARCH": {
+      "TITLE": "Поиск",
+      "NAME_LABEL": "Название мероприятия",
+      "BUTTON": "НАЙТИ",
+      "DATE_LABEL": "Дата мероприятия"
+    },
+    "MODAL": {
+      "CLOSE_ALT": "Закрыть",
+      "TITLE": "Регистрация на мероприятие",
+      "FIELDS": {
+        "NAME": "ФИО",
+        "PHONE": "Телефон",
+        "EMAIL": "Email",
+        "ADDITIONAL_INFO": "Дополнительная информация"
+      },
+      "BUTTONS": {
+        "SAVE": "СОХРАНИТЬ",
+        "CANCEL": "ОТМЕНИТЬ"
+      }
+    },
+    "DETAIL": {
+      "FINISHED": "Завершилось",
+      "REGISTER_BUTTON": "БУДУ УЧАСТВОВАТЬ",
+      "PARTICIPATING": "УЧАСТВУЮ",
+      "DESCRIPTION_LABEL": "Описание",
+      "REGISTRATION_END_DATE": "Дата окончания регистрации",
+      "DATES": "Дата(ы) проведения",
+      "FORMAT": "Формат мероприятия",
+      "ADDRESS": "Адрес",
+      "MAP_ALT": "Карта местоположения"
+    },
+    "CARD": {
+      "FINISHED": "Завершилось",
+      "DATES": "Дата(ы) проведения",
+      "FORMAT": "Формат мероприятия"
+    }
   }
 }

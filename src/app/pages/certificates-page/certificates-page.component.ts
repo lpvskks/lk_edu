@@ -29,6 +29,7 @@ import {
 } from '../../core/constants/certificate-types';
 import { BreadCrumbComponent } from "../../shared/components/bread-crumb/bread-crumb.component";
 import { NotificationService } from '../../core/services/popup/notification.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-certificates-page',
@@ -39,7 +40,8 @@ import { NotificationService } from '../../core/services/popup/notification.serv
     InfoSectionsComponent,
     OrderCertificatesComponent,
     CertificateListComponent,
-    BreadCrumbComponent
+    BreadCrumbComponent,
+    TranslateModule
 ],
   templateUrl: './certificates-page.component.html',
   styleUrls: ['./certificates-page.component.scss'],

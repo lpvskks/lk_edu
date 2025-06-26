@@ -1,5 +1,5 @@
 <div class="order-section">
-  <h3>Заказать справку</h3>
+  <h3>{{ 'CERTIFICATES-PAGE.ORDER_SECTION.TITLE' | translate }}</h3>
 
   <mat-form-field
     appearance="outline"
@@ -7,7 +7,7 @@
     class="wide-field type-field"
      [ngClass]="{ 'single-role': !hasBothRoles }"
   >
-    <mat-label>Тип справки</mat-label>
+    <mat-label>{{ 'CERTIFICATES-PAGE.ORDER_SECTION.TYPE_LABEL' | translate }}</mat-label>
     <mat-select [(value)]="selectedType">
       <mat-option *ngFor="let t of types" [value]="t.value">
         {{ t.viewValue }}
@@ -27,7 +27,7 @@
     class="wide-field kind-field"
     [ngClass]="{ 'single-role' : !hasBothRoles }"
   >
-    <mat-label>Вид справки</mat-label>
+    <mat-label>{{ 'CERTIFICATES-PAGE.ORDER_SECTION.KIND_LABEL' | translate }}</mat-label>
     <mat-select [(value)]="selectedKind">
       <mat-option *ngFor="let k of kinds" [value]="k.value">
         {{ k.viewValue }}
@@ -41,5 +41,5 @@
     />
   </mat-form-field>
 
-  <button class="order-btn" (click)="onOrderClick()">ЗАКАЗАТЬ</button>
+  <button class="order-btn" (click)="onOrderClick()">{{ 'CERTIFICATES-PAGE.ORDER_SECTION.BUTTON' | translate }}</button>
 </div>

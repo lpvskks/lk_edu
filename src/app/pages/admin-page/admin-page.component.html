@@ -1,38 +1,45 @@
 <app-bread-crumb></app-bread-crumb>
+
 <div class="cards">
   <div class="card">
     <div class="card__header">
       <a routerLink="/admin/users" class="card__link">
-      <img src="icons/administration/Users.svg" alt="" class="card__icon">
-      <h3 class="card__title">Пользователи</h3>
-        </a>
+        <img src="icons/administration/Users.svg" alt="" class="card__icon">
+        <h3 class="card__title">
+          {{ 'ADMINISTRATION-PAGE.CARDS.USERS.TITLE' | translate }}
+        </h3>
+      </a>
     </div>
     <p class="card__text">
-      Можно просмотреть список пользователей с возможностью фильтрации и поиска по имени или по первой букве фамилии.
+      {{ 'ADMINISTRATION-PAGE.CARDS.USERS.DESCRIPTION' | translate }}
     </p>
   </div>
 
   <div class="card">
     <div class="card__header">
-      <a routerLink="" class="card__link">
-      <img src="icons/administration/link.svg" alt="" class="card__icon">
-      <h3 class="card__title">Полезные сервисы</h3>
-        </a>
+      <a routerLink="/admin/useful-services" class="card__link">
+        <img src="icons/administration/link.svg" alt="" class="card__icon">
+        <h3 class="card__title">
+          {{ 'ADMINISTRATION-PAGE.CARDS.USEFUL_SERVICES.TITLE' | translate }}
+        </h3>
+      </a>
     </div>
     <p class="card__text">
-      Можно просмотреть, создать, отредактировать и удалить полезный сервис.
+      {{ 'ADMINISTRATION-PAGE.CARDS.USEFUL_SERVICES.DESCRIPTION' | translate }}
     </p>
   </div>
 
   <div class="card">
     <div class="card__header">
-      <a routerLink="/" class="card__link">
-      <img src="icons/administration/Map.svg" alt="" class="card__icon">
-      <h3 class="card__title">Мероприятия</h3>
-        </a>
+      <a routerLink="/admin/events" class="card__link">
+        <img src="icons/administration/Map.svg" alt="" class="card__icon">
+        <h3 class="card__title">
+          {{ 'ADMINISTRATION-PAGE.CARDS.EVENTS.TITLE' | translate }}
+        </h3>
+      </a>
     </div>
     <p class="card__text">
-       Можно просмотреть, создать, отредактировать и удалить мероприятие, а также, найти нужное с помощью поиска и фильтрации.
+      {{ 'ADMINISTRATION-PAGE.CARDS.EVENTS.DESCRIPTION' | translate }}
     </p>
   </div>
 </div>

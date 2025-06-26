@@ -6,8 +6,8 @@
     (click)="onTabClick(i)"
   >
     <div class="info">
-      <h3>{{ tab.title }}</h3>
-      <p *ngIf="tab.subtitle">{{ tab.subtitle }}</p>
+      <h3>{{ tab.title | translate }}</h3>
+      <p *ngIf="tab.subtitle">{{ tab.subtitle | translate }}</p>
     </div>
   </div>
 </div>
@@ -16,29 +16,29 @@
   <ng-container *ngIf="role === 'employee' && selectedPost">
     <div class="info-row">
       <div class="info-item">
-        <p class="info-label">Должность</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.POSITION' | translate }}</p>
         <p class="info-value">{{ selectedPost.postName.name }}</p>
       </div>
       <div class="info-item">
-        <p class="info-label">Ставка</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.RATE' | translate }}</p>
         <p class="info-value">{{ selectedPost.rate }}</p>
       </div>
     </div>
 
     <div class="info-row info-row--single">
       <div class="info-item full-width">
-        <p class="info-label">Место работы</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.WORKPLACE' | translate }}</p>
         <p class="info-value">{{ selectedPost.departments[0].name }}</p>
       </div>
     </div>
 
     <div class="info-row">
       <div class="info-item">
-        <p class="info-label">Тип должности</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.POST_TYPE' | translate }}</p>
         <p class="info-value">{{ selectedPost.postType.name }}</p>
       </div>
       <div class="info-item">
-        <p class="info-label">Вид занятости</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.EMPLOYMENT_TYPE' | translate }}</p>
         <p class="info-value">{{ selectedPost.employmentType }}</p>
       </div>
     </div>
@@ -47,13 +47,13 @@
   <ng-container *ngIf="role === 'student' && selectedEducation">
     <div class="info-row">
       <div class="info-item">
-        <p class="info-label">Уровень образования</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.EDU_LEVEL' | translate }}</p>
         <p class="info-value">
           {{ selectedEducation.educationLevel.name }}
         </p>
       </div>
       <div class="info-item">
-        <p class="info-label">Статус</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.STATUS' | translate }}</p>
         <p class="info-value">
           {{ selectedEducation.educationStatus.name }}
         </p>
@@ -62,20 +62,20 @@
 
     <div class="info-row info-row--single">
       <div class="info-item full-width">
-        <p class="info-label">Факультет</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.FACULTY' | translate }}</p>
         <p class="info-value">{{ selectedEducation.faculty.name }}</p>
       </div>
     </div>
 
     <div class="info-row">
       <div class="info-item">
-        <p class="info-label">Направление</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.DIRECTION' | translate }}</p>
         <p class="info-value">
           {{ selectedEducation.educationDirection.name }}
         </p>
       </div>
       <div class="info-item">
-        <p class="info-label">Группа</p>
+        <p class="info-label">{{ 'CERTIFICATES-PAGE.INFO_LABELS.GROUP' | translate }}</p>
         <p class="info-value">{{ selectedEducation.group.name }}</p>
       </div>
     </div>

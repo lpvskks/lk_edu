@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { LayoutComponent } from '../../shared/components/layout/layout.component';
 import { ActivatedRoute } from '@angular/router';
 import { UserListService } from '../../core/services/administration/user-list.service';
@@ -13,7 +13,8 @@ import { BreadCrumbComponent } from '../../shared/components/bread-crumb/bread-c
   selector: 'app-specific-user-page',
   imports: [
     CommonModule,
-    BreadCrumbComponent
+    BreadCrumbComponent,
+    TranslateModule
   ],
   templateUrl: './specific-user-page.component.html',
   styleUrl: './specific-user-page.component.scss',

@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-order-certificates',
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     MatSelectModule,
     MatButtonModule,
     CommonModule,
+    TranslateModule
   ],
   templateUrl: './order-certificates.component.html',
   styleUrl: './order-certificates.component.scss',

@@ -5,12 +5,12 @@
         <div class="info-row" *ngIf="cert.dateOfForming">
           <div class="info-item full-width">
             <p class="info-value">
-              Справка от
+              {{ "CERTIFICATES-PAGE.CERTIFICATE_LIST.FROM_DATE" | translate }}
               {{ cert.dateOfForming | date : "dd.MM.yyyy HH:mm" }}
             </p>
 
             <p class="info-label">
-              Тип справки:
+              {{ "CERTIFICATES-PAGE.CERTIFICATE_LIST.TYPE" | translate }}
               {{
                 cert.typeEnumDto?.displayName ||
                   cert.staffTypeEnumDto?.displayName
@@ -18,7 +18,8 @@
             </p>
 
             <p class="info-label">
-              Вид справки: {{ cert.receiveTypeEnumDto.displayName }}
+              {{ "CERTIFICATES-PAGE.CERTIFICATE_LIST.KIND" | translate }}
+              {{ cert.receiveTypeEnumDto.displayName }}
             </p>
           </div>
         </div>
@@ -40,7 +41,9 @@
                 alt="Подпись"
                 class="btn-icon"
               />
-              <span class="btn-text">Подпись</span>
+              <span class="btn-text">{{
+                "CERTIFICATES-PAGE.ACTIONS.SIGNATURE" | translate
+              }}</span>
             </button>
 
             <button
@@ -52,7 +55,9 @@
                 alt="Скачать"
                 class="btn-icon"
               />
-              <span class="btn-text">Справку</span>
+              <span class="btn-text">{{
+                "CERTIFICATES-PAGE.ACTIONS.DOWNLOAD" | translate
+              }}</span>
             </button>
           </div>
         </ng-container>
@@ -68,10 +73,10 @@
           <h4 class="status-text">
             {{
               cert.status === "Created"
-                ? "Создано"
+                ? ("CERTIFICATES-PAGE.STATUS.CREATED" | translate)
                 : cert.status === "InProcess"
-                ? "В работе"
-                : "Готово"
+                ? ("CERTIFICATES-PAGE.STATUS.IN_PROCESS" | translate)
+                : ("CERTIFICATES-PAGE.STATUS.FINISHED" | translate)
             }}
           </h4>
         </button>

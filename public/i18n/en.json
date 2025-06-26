@@ -66,5 +66,123 @@
   "USEFUL-SERVICES": {
     "TERMS_LABEL": "Terms of service",
     "GO_TO_SITE": "Visit website"
+  },
+   "ADMINISTRATION-PAGE": {
+    "BREADCRUMB": "Administration",
+    "CARDS": {
+      "USERS": {
+        "TITLE": "Users",
+        "DESCRIPTION": "You can view the list of users with filters and search by name or by the first letter of the surname."
+      },
+      "USEFUL_SERVICES": {
+        "TITLE": "Useful Services",
+        "DESCRIPTION": "You can view, create, edit and delete a useful service."
+      },
+      "EVENTS": {
+        "TITLE": "Events",
+        "DESCRIPTION": "You can view, create, edit and delete an event, as well as find the one you need using search and filters."
+      }
+    }
+  },
+  "CERTIFICATES-PAGE": {
+    "BREADCRUMB": "Certificates",
+    "TITLE": "Order Certificate",
+    "ROLE_SELECTOR": {
+      "STUDENT": "Student",
+      "EMPLOYEE": "Employee"
+    },
+    "ORDER_SECTION": {
+      "TITLE": "Order Certificate",
+      "TYPE_LABEL": "Certificate Type",
+      "KIND_LABEL": "Kind of Certificate",
+      "BUTTON": "ORDER"
+    },
+    "INFO_LABELS": {
+      "POSITION": "Position",
+      "RATE": "Rate",
+      "WORKPLACE": "Workplace",
+      "POST_TYPE": "Post Type",
+      "EMPLOYMENT_TYPE": "Employment Type",
+      "EDU_LEVEL": "Education Level",
+      "STATUS": "Status",
+      "FACULTY": "Faculty",
+      "DIRECTION": "Direction",
+      "GROUP": "Group"
+    },
+    "CERTIFICATE_LIST": {
+      "FROM_DATE": "Certificate from",
+      "TYPE": "Certificate Type:",
+      "KIND": "Kind of Certificate:"
+    },
+    "ACTIONS": {
+      "SIGNATURE": "Signature",
+      "DOWNLOAD": "Download"
+    },
+    "STATUS": {
+      "CREATED": "Created",
+      "IN_PROCESS": "In Process",
+      "FINISHED": "Finished"
+    }
+  },
+  "PROFILE-PAGE": {
+    "BREADCRUMB": "Profile",
+    "SECTION_TITLES": {
+      "PERSONAL_DATA": "Personal Data",
+      "CONTACTS": "Contacts"
+    },
+    "LABELS": {
+      "GENDER": "Gender",
+      "BIRTH_DATE": "Birth Date",
+      "EMAIL": "Email",
+      "PHONE": "Phone",
+      "PHONE_2": "Phone 2",
+      "ADDITIONAL_EMAIL": "Additional Email"
+    },
+    "GENDER_VALUES": {
+      "Female": "Female",
+      "Male": "Male"
+    },
+    "ALT": {
+      "PROFILE_PHOTO": "Profile photo"
+    }
+  }, 
+  "EVENTS-PAGE": {
+    "BREADCRUMB": "Events",
+    "SEARCH": {
+      "TITLE": "Search",
+      "NAME_LABEL": "Event Name",
+      "BUTTON": "FIND",
+      "DATE_LABEL": "Event Date"
+    },
+    "MODAL": {
+      "CLOSE_ALT": "Close",
+      "TITLE": "Event Registration",
+      "FIELDS": {
+        "NAME": "Full Name",
+        "PHONE": "Phone",
+        "EMAIL": "Email",
+        "ADDITIONAL_INFO": "Additional Information"
+      },
+      "BUTTONS": {
+        "SAVE": "Save",
+        "CANCEL": "Cancel"
+      }
+    },
+    "DETAIL": {
+      "FINISHED": "Finished",
+      "REGISTER_BUTTON": "I Will Participate",
+      "PARTICIPATING": "Participating",
+      "DESCRIPTION_LABEL": "Description",
+      "REGISTRATION_END_DATE": "Registration Deadline",
+      "DATES": "Date(s)",
+      "FORMAT": "Event Format",
+      "ADDRESS": "Address",
+      "MAP_ALT": "Location Map"
+    },
+    "CARD": {
+      "FINISHED": "Finished",
+      "DATES": "Date(s)",
+      "FORMAT": "Event Format"
+    }
   }
 }

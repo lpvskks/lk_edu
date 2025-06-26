@@ -10,10 +10,11 @@ import { API_URL } from '../../../../core/constants/api-url';
 import { AuthService } from '../../../../core/services/auth/auth.service';
 import { RegisterModalComponent } from '../register-modal/register-modal.component';
 import { NotificationService } from '../../../../core/services/popup/notification.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-event-detail',
-  imports: [CommonModule, RegisterModalComponent],
+  imports: [CommonModule, RegisterModalComponent, TranslateModule],
   templateUrl: './event-detail.component.html',
   styleUrl: './event-detail.component.scss',
 })

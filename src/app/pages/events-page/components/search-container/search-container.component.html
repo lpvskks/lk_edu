@@ -1,16 +1,18 @@
 <div class="search-container">
-  <h3>Поиск</h3>
+  <h3>{{ "EVENTS-PAGE.SEARCH.TITLE" | translate }}</h3>
   <form class="events-search-form" [formGroup]="form" (ngSubmit)="submit()">
     <mat-form-field
       appearance="outline"
       floatLabel="always"
       class="events-name-input"
     >
-      <mat-label>Название мероприятия</mat-label>
+      <mat-label>{{ "EVENTS-PAGE.SEARCH.NAME_LABEL" | translate }}</mat-label>
       <input matInput formControlName="name" />
     </mat-form-field>
 
-    <button type="submit" class="search-btn">НАЙТИ</button>
+    <button type="submit" class="search-btn">
+      {{ "EVENTS-PAGE.SEARCH.BUTTON" | translate }}
+    </button>
 
     <div class="date-picker-wrapper">
       <mat-form-field
@@ -18,7 +20,7 @@
         floatLabel="always"
         class="events-date-input"
       >
-        <mat-label>Дата мероприятия</mat-label>
+        <mat-label>{{ "EVENTS-PAGE.SEARCH.DATE_LABEL" | translate }}</mat-label>
         <input
           matInput
           [value]="form.value.date | date : 'dd.MM.yyyy'"

@@ -3,12 +3,14 @@ import { Component, inject, Input } from '@angular/core';
 import { EventDto } from '../../../../shared/types/events/events';
 import { EventsService } from '../../../../core/services/events/events.service';
 import { RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-event-card',
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule, 
+    TranslateModule
   ],
   templateUrl: './event-card.component.html',
   styleUrl: './event-card.component.scss'

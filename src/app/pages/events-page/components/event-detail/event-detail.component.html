@@ -1,27 +1,29 @@
 <div class="detail-container">
   <div class="detail-header">
     <h2 class="detail-title">{{ event.title }}</h2>
-    <button *ngIf="eventFinished" class="finished-btn">Завершилось</button>
+    <button *ngIf="eventFinished" class="finished-btn">
+      {{ "EVENTS-PAGE.DETAIL.FINISHED" | translate }}
+    </button>
     <ng-container *ngIf="!eventFinished && event.isRegistrationRequired">
       <button
         *ngIf="!authService.isAuth"
         (click)="onParticipateClick()"
         class="participate-btn"
       >
-        БУДУ УЧАСТВОВАТЬ
+        {{ "EVENTS-PAGE.DETAIL.REGISTER_BUTTON" | translate }}
       </button>
       <button
         *ngIf="authService.isAuth && !isParticipant"
         (click)="onParticipateClick()"
         class="participate-btn"
       >
-        БУДУ УЧАСТВОВАТЬ
+        {{ "EVENTS-PAGE.DETAIL.REGISTER_BUTTON" | translate }}
       </button>
       <button
         *ngIf="authService.isAuth && isParticipant"
         class="participating-btn"
       >
-        УЧАСТВУЮ
+        {{ "EVENTS-PAGE.DETAIL.PARTICIPATING" | translate }}
       </button>
     </ng-container>
   </div>
@@ -35,18 +37,24 @@
 
   <div class="detail-card">
     <div class="description-section">
-      <h4 class="section-label">Описание</h4>
+      <h4 class="section-label">
+        {{ "EVENTS-PAGE.DETAIL.DESCRIPTION_LABEL" | translate }}
+      </h4>
       <p class="section-value">{{ event.description }}</p>
-      <img   *ngIf="event.picture?.id"
-       class="event-image-md"
+      <img
+        *ngIf="event.picture?.id"
+        class="event-image-md"
         [src]="pictureUrl"
-         [alt]="event.title" />
+        [alt]="event.title"
+      />
     </div>
 
     <div class="section-content">
       <div class="info-row info-row--single">
         <div class="info-item full-width">
-          <p class="info-label">Дата окончания регистрации</p>
+          <p class="info-label">
+            {{ "EVENTS-PAGE.DETAIL.REGISTRATION_END_DATE" | translate }}
+          </p>
           <p class="info-value">
             {{ event.registrationLastDate | date : "dd.MM.yyyy" }}
           </p>
@@ -55,7 +63,7 @@
 
       <div class="info-row">
         <div class="info-item">
-          <p class="info-label">Дата(ы) проведения</p>
+          <p class="info-label">{{ "EVENTS-PAGE.DETAIL.DATES" | translate }}</p>
           <p class="info-value">
             {{ event.dateTimeFrom | date : "dd.MM.yyyy" }}
             ({{ event.dateTimeFrom | date : "HH:mm" }} –
@@ -63,14 +71,18 @@
           </p>
         </div>
         <div class="info-item">
-          <p class="info-label">Формат мероприятия</p>
+          <p class="info-label">
+            {{ "EVENTS-PAGE.DETAIL.FORMAT" | translate }}
+          </p>
           <p class="info-value">{{ formatLabel }}</p>
         </div>
       </div>
 
       <div class="info-row">
         <div class="info-item" *ngIf="event.format == 'Offline'">
-          <p class="info-label">Адрес</p>
+          <p class="info-label">
+            {{ "EVENTS-PAGE.DETAIL.ADDRESS" | translate }}
+          </p>
           <p class="info-value">{{ event.addressName }}</p>
         </div>
         <div class="info-item">
