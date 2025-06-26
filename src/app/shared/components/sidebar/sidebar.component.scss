@@ -119,3 +119,22 @@ p {
   padding: 0;
   transition: transform 3s ease;
 }
+.logout-row {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding-block: 12px;
+
+  .logout-text {
+    margin: 0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  &:hover .logout-text {
+    color: $buttons-color;
+  }
+}

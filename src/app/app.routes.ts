@@ -10,6 +10,7 @@ import { EventDetailComponent } from './pages/events-page/components/event-detai
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { AdminUsersPageComponent } from './pages/admin-users-page/admin-users-page.component';
 import { SpecificUserPageComponent } from './pages/specific-user-page/specific-user-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 export const routes: Routes = [
   {path: '', component: LayoutComponent, children: [
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path: 'admin', component: AdminPageComponent},
     {path: 'admin/users', component: AdminUsersPageComponent},
     {path: 'admin/users/:id', component: SpecificUserPageComponent},
+    {path: 'notFound', component: NotFoundPageComponent},
   ]},
   {path: 'login', component: LoginPageComponent},
  // {path: '',  canActivate: [canActivateAuth]}

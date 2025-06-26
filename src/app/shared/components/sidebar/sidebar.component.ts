@@ -7,9 +7,10 @@ import {
   Output,
   signal,
 } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ProfileService } from '../../../core/services/profile/profile.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-sidebar',
@@ -18,6 +19,8 @@ import { ProfileService } from '../../../core/services/profile/profile.service';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
+  cookieService = inject(CookieService);
+  router = inject(Router);
   private profileService = inject(ProfileService);
   readonly avatarUrl$ = this.profileService.avatarUrl$;
   isCollapsed = signal(true);
@@ -71,5 +74,10 @@ export class SidebarComponent {
       this.isCollapsed.set(next);
       this.sidebarToggle.emit(next);
     }
+  }
+   onLogout(): void {
+    this.cookieService.delete('token', '/');
+    this.cookieService.delete('refreshToken', '/');
+    this.router.navigate(['/login']);
   }
 }

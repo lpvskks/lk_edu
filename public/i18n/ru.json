@@ -13,7 +13,8 @@
     "USEFUL_SERVICES": "Полезные сервисы",
     "EVENTS": "Мероприятия",
     "SHOW_SIDEBAR": "Показать сайдбар",
-    "HIDE_SIDEBAR": "Скрыть сайдбар"
+    "HIDE_SIDEBAR": "Скрыть сайдбар",
+    "LOGOUT": "Выйти"
   },
   "PAGE_TITLES": {
     "PROFILE": "Профиль",

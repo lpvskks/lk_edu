@@ -13,7 +13,8 @@
     "USEFUL_SERVICES": "Useful Services",
     "EVENTS": "Events",
     "SHOW": "Show sidebar",
-    "HIDE": "Hide sidebar"
+    "HIDE": "Hide sidebar",
+    "LOGOUT": "Logout"
   },
 
   "PAGE_TITLES": {

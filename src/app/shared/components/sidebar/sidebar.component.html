@@ -33,5 +33,10 @@
       <img [src]="item.icon" [alt]="item.alt" class="sidebar-icon" />
       <p *ngIf="!isFullyCollapsed">{{ item.label | translate }}</p>
     </div>
+    <div class="sidebar-row logout-row" (click)="onLogout()" tabindex="0">
+  <p *ngIf="!isFullyCollapsed" class="logout-text">
+    {{ 'SIDEBAR.LOGOUT' | translate }}
+  </p>
+</div>
   </div>
 </div>
