@@ -60,6 +60,7 @@ export class AdminUsersPageComponent {
         this.currentPage = res.metaData.pageNumber;
         this.totalPages = res.metaData.pageCount;
       }),
+      // используем shareReplay чтобы не делать лишние запросы
       shareReplay({ bufferSize: 1, refCount: true })
     );
 

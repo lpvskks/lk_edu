@@ -16,6 +16,13 @@
   gap: 20px;
 }
 
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  padding-top: 20px;
+}
+
 @media (max-width: 1536px) {
   .events-list {
     grid-template-columns: repeat(2, 1fr);

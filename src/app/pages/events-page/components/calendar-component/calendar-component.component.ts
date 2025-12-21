@@ -45,7 +45,7 @@ export class CalendarComponentComponent {
     const year = this.viewDate.getFullYear();
     const month = this.viewDate.getMonth();
     const firstOfMonth = new Date(year, month, 1);
-    const lastOfMonth = new Date(year, month + 1, 0);
+    const lastOfMonth = new Date(year, month + 1, 0); 
 
     let startDow = (firstOfMonth.getDay() + 6) % 7;
     const prevMonthDays = new Date(year, month, 0).getDate();
